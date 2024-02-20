@@ -113,4 +113,5 @@ textarea:focus {
 
 	border: none;
 	border-radius: 5px;
+	cursor: pointer;
 }
