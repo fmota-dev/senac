@@ -74,7 +74,7 @@ label {
 	margin-top: 5px;
 	border-radius: 5px;
 	border: none;
-	background: #e5e5e5;
+	background: #e6e7e9;
 }
 
 .formulario input:focus,
@@ -93,7 +93,7 @@ textarea:focus {
 
 .formulario textarea {
 	width: 100%;
-	background: #e5e5e5;
+	background: #e6e7e9;
 	border: none;
 	resize: none;
 	border-radius: 5px;
@@ -103,7 +103,7 @@ textarea:focus {
 
 .formulario button {
 	color: #fff;
-	background: #004b8d;
+	background: #f7931d;
 
 	font-weight: 600;
 	width: 100%;
