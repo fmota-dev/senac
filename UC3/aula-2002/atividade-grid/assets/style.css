@@ -76,7 +76,8 @@ label {
 	background: #e5e5e5;
 }
 
-.formulario input:focus {
+.formulario input:focus,
+textarea:focus {
 	outline: none;
 }
 
@@ -95,6 +96,7 @@ label {
 	border: none;
 	border-radius: 5px;
 	margin-top: 5px;
+	padding: 10px;
 }
 
 .formulario button {
