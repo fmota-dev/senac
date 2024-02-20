@@ -1,0 +1,61 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+section.produtos {
+	display: flex;
+	gap: 20px;
+	margin: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div.card-produto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+	height: 300px;
+	border: 1px solid #992121;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12),
+		0 1px 3px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 15px;
+	background: #f3f4f6;
+}
+
+div.card-img {
+	width: 100px;
+	height: 100px;
+	margin-top: 20px;
+	border-radius: 50%;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	color: #b91c1c;
+}
+
+p {
+	margin-bottom: 15px;
+	padding: 5px;
+	text-align: center;
+	color: #2e2e2e;
+}
+
+button {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border: none;
+	border-radius: 15px;
+	padding: 8px 16px;
+	font-size: 12px;
+	font-weight: 600;
+	background: #7f1d1d;
+	color: #f7f7f7;
+	cursor: pointer;
+}

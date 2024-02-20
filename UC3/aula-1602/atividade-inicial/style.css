@@ -1,0 +1,21 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  color: #7a7e85;
+}
+
+p.destaque {
+  color: orange;
+  font-weight: bold;
+}

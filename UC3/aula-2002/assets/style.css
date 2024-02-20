@@ -1,0 +1,113 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(400px, 1fr));
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 5px;
+	font-family: "Montserrat", sans-serif;
+}
+
+section.contato {
+	padding: 30px;
+	background: #e5e5e5;
+}
+
+.contato-telefone div,
+.contato-email div,
+.contato-local div {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.contato h2 {
+	font-size: 38px;
+	font-weight: 400;
+	margin-bottom: 26px;
+}
+
+.contato div + div {
+	margin-top: 42px;
+}
+
+.contato img {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+}
+
+.contato span {
+	font-weight: 600;
+}
+
+.contato a {
+	text-decoration: none;
+	font-size: 16px;
+	color: #6e6e6e;
+}
+
+section.formulario {
+	padding: 30px;
+}
+
+.formulario h2 {
+	font-size: 38px;
+	font-weight: 400;
+	margin-bottom: 26px;
+}
+
+.formulario input,
+label {
+	display: block;
+}
+
+.formulario input {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border-radius: 5px;
+	border: none;
+	background: #e5e5e5;
+}
+
+.formulario input:focus {
+	outline: none;
+}
+
+.formulario input::placeholder {
+	font-size: 12px;
+	color: #b1b1b1;
+}
+
+.formulario input + label {
+	margin-top: 20px;
+}
+
+.formulario textarea {
+	width: 100%;
+	background: #e5e5e5;
+	border: none;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.formulario button {
+	color: #fff;
+	background: #ff1c84;
+
+	font-weight: 600;
+	width: 100%;
+
+	margin-top: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+
+	border: none;
+	border-radius: 5px;
+}
