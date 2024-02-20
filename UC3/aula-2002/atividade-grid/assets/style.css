@@ -6,10 +6,10 @@
 
 main {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	max-width: 1280px;
 	margin: 0 auto;
-	padding: 5px;
+	padding: px;
 	font-family: "Montserrat", sans-serif;
 }
 
@@ -94,6 +94,7 @@ textarea:focus {
 	width: 100%;
 	background: #e5e5e5;
 	border: none;
+	resize: none;
 	border-radius: 5px;
 	margin-top: 5px;
 	padding: 10px;
