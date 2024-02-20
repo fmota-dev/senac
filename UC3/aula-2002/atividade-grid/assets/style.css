@@ -15,7 +15,7 @@ main {
 
 section.contato {
 	padding: 30px;
-	background: #e5e5e5;
+	background: #e6e7e9;
 }
 
 .contato-telefone div,
@@ -54,6 +54,7 @@ section.contato {
 
 section.formulario {
 	padding: 30px;
+
 }
 
 .formulario h2 {
