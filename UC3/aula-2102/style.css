@@ -28,7 +28,7 @@ aside ul li {
 	margin-bottom: 15px;
 }
 
-.aside2 {
+aside:nth-of-type(2) {
 	grid-area: aside2;
 }
 
@@ -51,7 +51,7 @@ section p {
 	line-height: 1.5;
 }
 
-.section2 {
+section:nth-of-type(2) {
 	grid-area: section2;
 }
 
