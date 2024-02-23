@@ -11,7 +11,7 @@ body {
 
 img {
 	display: block;
-	width: 100px;
+	min-width: 100px;
 	height: 100px;
 	object-fit: cover;
 }
@@ -33,17 +33,17 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 20px;
+
 	max-width: 1280px;
 	margin: 20px auto;
 	padding: 20px;
+	
 	border-radius: 5px;
 	background-color: #222222;
 }
 
 section {
-	display: flex;
-	min-width: 250px;
-	flex: 1;
+	flex: 1 0 250px;
 	border-radius: 5px;
 	background-color: rgb(85, 84, 84);
 }
