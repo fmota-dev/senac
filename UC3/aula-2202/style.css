@@ -10,23 +10,21 @@ body {
 }
 
 img {
-  display: block;
   min-width: 100px;
   height: 100px;
   object-fit: cover;
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   background-color: #1b1b1b;
   padding: 30px;
   color: white;
 }
 
-header img {
-  margin-top: 20px;
+header h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
 main {
@@ -39,23 +37,23 @@ main {
   padding: 40px;
 
   border-radius: 5px;
-  background-color: #222222;
+  background-color: #1b1b1b;
 }
 
 section {
-  flex: 1 0 250px;
+  flex: 1;
+  min-width: 270px;
   border-radius: 5px;
 }
 
 .band {
   display: flex;
   align-items: center;
-  flex: 1;
   gap: 20px;
   padding: 20px;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.349);
-  background-color: #1e1d1d;
+  border: 1px solid rgba(255, 255, 255, 0.208);
+  background-color: #1e1e1e;
 }
 
 .band-info h2 {
