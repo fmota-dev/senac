@@ -1,10 +1,16 @@
 :root {
 	--cor-primaria: #231123;
-	--cor-primaria-2: #f7941d;
+	--cor-primaria-2: #da8a2a;
 	--cor-secundaria: #cac6c6;
 	--cor-secundaria-2: #252525;
 	--cor-background: #202020;
-	--gradiente: linear-gradient(90deg, #c57819 100%, transparent);
+	--gradiente: linear-gradient(90deg, var(--cor-primaria-2) 100%, transparent);
+
+	--fonte-titulo: 700 2.2rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--fonte-subtitulo: 700 1.6rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--fonte-subtitulo-m: 500 1.2rem 'Segoe UI', Tahoma, Geneva, Verdana,
+		sans-serif;
+	--fonte-corpo-texto: 1rem/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ESTILOS GERAIS*/
@@ -42,12 +48,6 @@ img {
 	border-radius: 10px 10px 0 0;
 }
 
-hr {
-	height: 15px;
-	border: none;
-	border-top: 1px solid var(--cor-secundaria);
-}
-
 /* CABECALHO */
 
 .cabecalho {
@@ -58,7 +58,7 @@ hr {
 }
 
 .cabecalho .titulo {
-	font-size: 2.5rem;
+	font: var(--fonte-titulo);
 	color: #fff;
 }
 
@@ -87,31 +87,31 @@ hr {
 	gap: 10px;
 	margin: 1.25rem auto;
 	padding: 1.5rem;
-	color: #fff;
 	background-color: var(--cor-secundaria-2);
 	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12),
 		0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .subtitulo-principal {
-	padding: 10px;
-	color: #fff;
-	font-size: 1.5rem;
+	padding: 0.625rem;
+	color: var(--cor-primaria);
+	font: var(--fonte-subtitulo);
 	background: var(--gradiente);
 	border-radius: 0px 0px 10px 10px;
 	margin-top: -10px;
 }
 
 .subtitulo-noticia {
-	padding: 10px;
-	font-size: 1.2rem;
+	padding: 0.625rem;
+	font: var(--fonte-subtitulo-m);
 	color: var(--cor-secundaria);
 }
 
 .texto-noticia {
-	padding: 10px;
-	margin-top: -25px;
-	line-height: 1.5;
+	padding: 0.625rem;
+	margin-top: -15px;
+	font: var(--fonte-corpo-texto);
+	color: #fff;
 }
 
 .texto-noticia::after {
@@ -130,19 +130,24 @@ hr {
 	margin-top: -20px;
 	margin-bottom: 20px;
 	padding: 1.5rem;
-	background: var(--gradiente);
+	background: var(--cor-primaria-2);
 	border-radius: 0 0 20px 20px;
+}
+
+.conteudo-secundario h2 {
+	font: var(--fonte-subtitulo);
+	padding: 0.625rem;
 }
 
 .conteudo-secundario ul {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	gap: 10px;
+	gap: 0.625rem;
 }
 
 .conteudo-secundario li {
-	color: #352208;
+	color: var(--cor-primaria);
 	font-weight: 500;
 }
 
