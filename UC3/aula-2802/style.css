@@ -1,0 +1,15 @@
+body {
+  background-color: red;
+}
+
+@media (width < 800px) {
+  body {
+    background-color: yellow;
+  }
+}
+
+@media (width < 450px) {
+  body {
+    background-color: green;
+  }
+}
