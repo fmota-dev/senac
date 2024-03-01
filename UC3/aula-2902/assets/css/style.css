@@ -130,6 +130,10 @@ input:focus {
 	padding: 0.3125rem;
 }
 
+#cadastro main {
+	padding: 40px;
+}
+
 input[type='date']::-webkit-calendar-picker-indicator {
 	filter: invert(100%); /* Inverte as cores do ícone */
 }
@@ -177,6 +181,6 @@ input[type='checkbox']:focus {
 
 @media (width < 768px) {
 	html {
-		font-size: 0.9rem
+		font-size: 0.9rem;
 	}
 }
