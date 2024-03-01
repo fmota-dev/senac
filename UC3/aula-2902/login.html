@@ -4,22 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/login.css">
-
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Teste - Login</title>
 </head>
 
-<body class="container">
-  <h1>LOGIN</h1>
-  <form action="">
-    <label for="usuario">Usuário</label>
-    <input type="text" name="usuario" id="usuario" placeholder="Digite seu usuário">
-
-    <label for="senha">Senha</label>
-    <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
-
-    <input type="submit" value="Entrar">
-  </form>
+<body>
+  <main class="container">
+    <img src="assets/imgs/img-forms.jpg" alt="">
+    <section>
+      <div>
+        <h1>FAZER LOGIN</h1>
+        <form action="">
+          <label for="usuario">Usuário:</label>
+          <input type="text" name="usuario" id="usuario" placeholder="Digite seu usuário">
+          <label for="senha">Senha:</label>
+          <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+          <div class="botoes">
+            <button id="btn-login" type="submit">ENTRAR</button>
+            <a href="./cadastro.html">Não possui uma conta? Cadastre-se agora!</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>

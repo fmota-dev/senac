@@ -4,35 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/cadastro.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 
   <title>Teste - Cadastro</title>
 </head>
 
-<body>
+<body id="cadastro">
   <main class="container">
-    <h1>CADASTRO</h1>
     <section>
-      <form action="">
-        <label for="nome">Nome completo:</label>
-        <input type="text" name="nome" id="nome">
+      <div>
+        <h1>CADASTRO</h1>
+        <form action="">
+          <label for="nome">Nome completo:</label>
+          <input type="text" name="nome" id="nome">
+          <label for="email">E-mail:</label>
+          <input type="email" name="email" id="email">
+          <label for="nascimento">Data de Nascimento:</label>
+          <input type="date" name="nascimento" id="nascimento">
+          <label for="genero">Gênero</label>
+          <select name="genero" id="genero">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+          </select>
+          <label for="telefone">Telefone</label>
+          <input type="number" name="telefone" id="telefone">
 
-        <label for="email">E-mail:</label>
-        <input type="email" name="email" id="email">
+          <label for="senha">Insira uma senha</label>
+          <input type="password" name="senha" id="senha">
+          <label for="confirmar-senha">Confirme sua senha</label>
+          <input type="password" name="confirmar-senha" id="confirmar-senha">
+          <div class="termos-e-condicoes">
+            <label for="termos-e-condicoes">Aceito os termos e condições</label>
+            <input type="checkbox" id="termos-e-condicoes">
+          </div>
 
-        <label for="nascimento">Data de Nascimento:</label>
-        <input type="date" name="nascimento" id="nascimento">
-
-        <label for="genero">Gênero</label>
-        <select name="genero" id="genero">
-          <option value="masculino">Masculino</option>
-          <option value="feminino">Feminino</option>
-          <option value="outro">Outro</option>
-        </select>
-
-        <label for="telefone">Telefone</label>
-        <input type="number" name="telefone" id="telefone">
-      </form>
+          <div class="botoes">
+            <button id="btn-cadastrar" type="submit">CADASTRAR</button>
+            <a href="./login.html">Já possui uma conta? Faça login!</a>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 </body>

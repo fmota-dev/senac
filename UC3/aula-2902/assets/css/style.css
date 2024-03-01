@@ -1,0 +1,176 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	border: 0;
+	outline: 0;
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #030917;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 500px;
+	padding: 20px;
+	height: 100vh;
+}
+
+main {
+	border: 1px solid #1e232f;
+}
+
+section {
+	width: 100%;
+	padding: 40px;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	margin-bottom: 20px;
+}
+
+h1 {
+	margin-bottom: 40px;
+	color: #4399e9;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+}
+
+label {
+	font-weight: 500;
+	color: #fff;
+	margin-bottom: 12px;
+}
+
+input,
+select {
+	padding: 12px;
+	margin-bottom: 20px;
+	border: 1px solid #1e232f;
+	border-radius: 5px;
+	color: #848a92;
+	background-color: #030917;
+}
+
+input[name='usuario'] {
+	background-image: url('../imgs/person.svg');
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+}
+
+input[name='senha'] {
+	background-image: url('../imgs/key.svg');
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+}
+
+input::placeholder {
+	color: #c6c7ca73;
+}
+
+input:focus {
+	outline: 1px solid #4399e9;
+}
+
+.botoes {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+#btn-login,
+#btn-cadastrar {
+	max-width: 200px;
+	padding: 10px 15px;
+	cursor: pointer;
+	font-weight: 600;
+	border-radius: 5px;
+	color: #fff;
+	background: #3498db;
+}
+
+#btn-login:hover,
+#btn-cadastrar:hover {
+	background: #347cdb;
+}
+
+.botoes a {
+	color: #868c94;
+	font-weight: 500;
+	padding: 10px 0;
+}
+
+.botoes a:hover {
+	color: #a2a8b1;
+}
+
+/* CADASTRO */
+
+#cadastro .container {
+	height: auto;
+}
+
+#cadastro section {
+	padding: 5px;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+	filter: invert(100%); /* Inverte as cores do ícone */
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type='checkbox'] {
+	border: 2px solid #a2a8b1;
+	appearance: none;
+	margin: 0;
+	padding: 8px;
+	border-radius: 50%;
+}
+
+input[type='checkbox']:checked {
+	background-color: #4399e9;
+	border: 2px solid #fff;
+	outline: none;
+}
+
+input[type='checkbox']:focus {
+	outline: none;
+}
+
+.termos-e-condicoes {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin-bottom: 20px;
+}
+
+.termos-e-condicoes label {
+	color: #a2a8b1;
+	margin-bottom: 0;
+	margin-right: 5px;
+}
+
+#cadastro .botoes {
+	flex-direction: row;
+	gap: 15px;
+}
