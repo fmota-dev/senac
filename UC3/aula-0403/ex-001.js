@@ -27,6 +27,7 @@ function calcularQuadrado() {
   let lado = prompt("Digite o lado do quadrado");
   let perimetro = lado * 4;
   let area = lado * lado;
+  alert(`O perimetro é: ${perimetro} e a área é: ${area}`);
 }
 
 let button3 = document.getElementById("calcularQuadrado");
