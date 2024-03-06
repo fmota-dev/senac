@@ -1,10 +1,6 @@
-const paragrafos = document.getElementsByTagName("p");
+const paragrafos = document.querySelectorAll('p');
 console.log(paragrafos);
 
-for (let i = 0; i < paragrafos.lenght; i++) {
-  console.log(paragrafos[i].innerText);
-}
-
-paragrafos.foreach (function (paragrafo) {
-  console.log(paragrafo.innerText);
+paragrafos.forEach(function (paragrafo) {
+	console.log(paragrafo.innerText);
 });
