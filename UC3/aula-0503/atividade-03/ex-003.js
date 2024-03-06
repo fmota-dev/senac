@@ -1,6 +1,6 @@
 // GERAL
 
-const paragrafosGeral = document.getElementsByTagName("p");
+const paragrafosGeral = document.querySelectorAll("p");
 const resultadoGeral = document.getElementById("resultadoGeral");
 resultadoGeral.innerText = "Resultado geral " + paragrafosGeral.length;
 
