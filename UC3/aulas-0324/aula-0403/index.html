@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <script src="./ex-001.js" defer></script>
   <title>Document</title>
 </head>
+
 <body>
-  <button id="calcularDesconto">CALCULAR DESCONTO</button>
-  <button id="converterTemperatura">CONVERTER Cº para Fº</button>
-  <button id="calcularQuadrado">CALCULAR ÁREA E PERIMETRO</button>
-  <button id="calcularIdade">CALCULAR IDADE</button>
+  <main>
+    <section class="calcularDesconto">
+      <h2>Questão 1 - Calcular Desconto</h2>
+      <form action="">
+        <label for="preco">Preço do produto</label>
+        <input type="number" id="preco" name="preco">
+        <label for="desconto">Desconto em %</label>
+        <input type="number" id="desconto" name="desconto">
+        <button id="calcularDesconto">CALCULAR DESCONTO</button>
+      </form>
+      <div id="resultadoDesconto"></div>
+    </section>
+    <section class="converterTemperatura">
+      <h2>Questão 2 - Converter Temperatura</h2>
+      <form action="">
+        <label for="temperatura">Temperatura em Cº</label>
+        <input type="number" id="temperatura" name="temperatura">
+        <button id="converterTemperatura">CONVERTER Cº para Fº</button>
+      </form>
+      <div id="resultadoTemperatura"></div>
+    </section>
+    <section class="calcularQuadrado">
+      <h2>Questão 3 - Calcular Área e Perimetro</h2>
+      <form action="">
+        <label for="lado">Lado do quadrado</label>
+        <input type="number" id="lado" name="lado">
+        <button id="calcularQuadrado">CALCULAR ÁREA E PERIMETRO</button>
+      </form>
+      <div id="resultadoQuadrado"></div>
+    </section>
+    <section class="calcularIdade">
+      <h2>Questão 4 - Calcular Idade</h2>
+      <form action="">
+        <label for="anoNascimento">Ano de nascimento</label>
+        <input type="number" id="anoNascimento" name="anoNascimento">
+        <button id="calcularIdade">CALCULAR IDADE</button>
+      </form>
+      <div id="resultadoIdade"></div>
+    </section>
+  </main>
 </body>
+
 </html>

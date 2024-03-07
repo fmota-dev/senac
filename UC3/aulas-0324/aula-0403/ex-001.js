@@ -1,46 +1,57 @@
 // Calcule o preço total de um produto após aplicar um desconto de 20%.
 
-function calcularDesconto() {
-  let preco = prompt("Digite o preço do produto");
-  let desconto = prompt("Digite o desconto");
+function calcularDesconto(event) {
+  event.preventDefault();
+  let preco = document.getElementById("preco").value;
+  let desconto = document.getElementById("desconto").value;
   let precoFinal = preco - (preco * desconto) / 100;
-  alert(precoFinal);
+  let resultadoDesconto = document.getElementById("resultadoDesconto");
+  resultadoDesconto.innerText = `O preço com desconto é: R$ ${precoFinal}`;
 }
 
-let button = document.getElementById("calcularDesconto");
-button.addEventListener("click", calcularDesconto);
+let btnCalcularDesconto = document.getElementById("calcularDesconto");
+btnCalcularDesconto.addEventListener("click", calcularDesconto);
 
 // Converta de Celsius para Fahrenheit
 
-function converterCelsiusParaFahrenheit() {
-  let celsius = prompt("Digite a temperatura em Celsius");
+function converterCelsiusParaFahrenheit(event) {
+  event.preventDefault();
+  let celsius = document.getElementById("temperatura").value;
   let fahrenheit = celsius * 1.8 + 32;
-  alert(`A temperatura em Fahrenheit é: ${fahrenheit}`);
+  let resultadoTemperatura = document.getElementById("resultadoTemperatura");
+  resultadoTemperatura.innerText = `A temperatura em Fahrenheit é: ${fahrenheit}`;
 }
 
-let button2 = document.getElementById("converterTemperatura");
-button2.addEventListener("click", converterCelsiusParaFahrenheit);
+let btnConverterTemperatura = document.getElementById("converterTemperatura");
+btnConverterTemperatura.addEventListener(
+  "click",
+  converterCelsiusParaFahrenheit
+);
 
 // Calcular o perimetro e a área de um retângulo
 
-function calcularQuadrado() {
-  let lado = prompt("Digite o lado do quadrado");
+function calcularQuadrado(event) {
+  event.preventDefault();
+  let lado = document.getElementById("lado").value;
   let perimetro = lado * 4;
   let area = lado * lado;
-  alert(`O perimetro é: ${perimetro} e a área é: ${area}`);
+  let resultadoQuadrado = document.getElementById("resultadoQuadrado");
+  resultadoQuadrado.innerText = `O perimetro é ${perimetro} e a área é ${area}`;
 }
 
-let button3 = document.getElementById("calcularQuadrado");
-button3.addEventListener("click", calcularQuadrado);
+let btnCalcularQuadrado = document.getElementById("calcularQuadrado");
+btnCalcularQuadrado.addEventListener("click", calcularQuadrado);
 
 // Calcular a idade com base no ano de nascimento
 
-function calcularIdade() {
-  let anoNascimento = prompt("Digite o ano de nascimento");
+function calcularIdade(event) {
+  event.preventDefault();
+  let anoNascimento = document.getElementById("anoNascimento").value;
   let anoAtual = new Date().getFullYear();
   let idade = anoAtual - anoNascimento;
-  alert(`A idade é: ${idade}`);
+  let resultadoIdade = document.getElementById("resultadoIdade");
+  resultadoIdade.innerText = `A sua idade é: ${idade}`;
 }
 
-let button4 = document.getElementById("calcularIdade");
-button4.addEventListener("click", calcularIdade);
+let btnCalcularIdade = document.getElementById("calcularIdade");
+btnCalcularIdade.addEventListener("click", calcularIdade);
