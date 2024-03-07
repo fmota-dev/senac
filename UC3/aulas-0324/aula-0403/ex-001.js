@@ -19,7 +19,7 @@ function converterCelsiusParaFahrenheit(event) {
   let celsius = document.getElementById("temperatura").value;
   let fahrenheit = celsius * 1.8 + 32;
   let resultadoTemperatura = document.getElementById("resultadoTemperatura");
-  resultadoTemperatura.innerText = `A temperatura em Fahrenheit é: ${fahrenheit}`;
+  resultadoTemperatura.innerText = `A temperatura em Fahrenheit é: ${fahrenheit}°F`;
 }
 
 let btnConverterTemperatura = document.getElementById("converterTemperatura");
@@ -50,7 +50,7 @@ function calcularIdade(event) {
   let anoAtual = new Date().getFullYear();
   let idade = anoAtual - anoNascimento;
   let resultadoIdade = document.getElementById("resultadoIdade");
-  resultadoIdade.innerText = `A sua idade é: ${idade}`;
+  resultadoIdade.innerText = `A sua idade é: ${idade} anos`;
 }
 
 let btnCalcularIdade = document.getElementById("calcularIdade");
