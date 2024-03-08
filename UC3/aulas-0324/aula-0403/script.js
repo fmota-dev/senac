@@ -55,3 +55,33 @@ function calcularIdade(event) {
 
 let btnCalcularIdade = document.getElementById("calcularIdade");
 btnCalcularIdade.addEventListener("click", calcularIdade);
+
+// Reajustar o preço do produto com base na média de vendas mensais.
+
+function reajustarPreco(event, valorProduto, vendaMediaMensal) {
+  event.preventDefault();
+  valorProduto = document.getElementById("valorProduto").value;
+  vendaMediaMensal = document.getElementById("vendaMediaMensal").value;
+  resultadoPreco = document.getElementById("resultadoPreco");
+	if (valorProduto < 30 && vendaMediaMensal < 500) {
+		novoPreco = valorProduto * 1.1;
+	} else if (
+		valorProduto >= 30 &&
+		valorProduto < 80 &&
+		vendaMediaMensal >= 500 &&
+		vendaMediaMensal < 1200
+	) {
+		novoPreco = valorProduto * 1.15;
+	} else if (valorProduto >= 80 && vendaMediaMensal >= 1200) {
+		novoPreco = valorProduto * 0.8;
+  } else {
+    resultadoPreco.innerText = "Não houve reajuste no preço do produto";
+  }
+
+	if (novoPreco !== "Não houve reajuste no preço do produto") {
+		resultadoPreco.innerText = `O novo valor é R$ ${novoPreco.toFixed(2)}`;
+	}
+}
+
+let btnReajustarPreco = document.getElementById("reajustarPreco");
+btnReajustarPreco.addEventListener("click", reajustarPreco);
