@@ -12,5 +12,4 @@ function reajustarPreco(valorProduto, vendaMediaMensal) {
 	}
 }
 
-module.exports = reajustarPreco;
 
