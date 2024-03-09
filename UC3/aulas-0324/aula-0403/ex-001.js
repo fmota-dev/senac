@@ -76,11 +76,13 @@ function reajustarPreco(event, valorProduto, vendaMediaMensal) {
   } else if (valorProduto >= 80 && vendaMediaMensal >= 1200) {
     novoPreco = valorProduto * 0.8;
   } else {
-    resultadoNovoPreco.innerText = "Não houve alteração no preço";
+    novoPreco = false;
   }
 
-  if (novoPreco !== "Não houve alteração no preço") {
+  if (novoPreco) {
     resultadoNovoPreco.innerText = `O novo preço é: R$ ${novoPreco.toFixed(2)}`;
+  } else {
+    resultadoNovoPreco.innerText = `Não houve alteração no preço`;
   }
 }
 
