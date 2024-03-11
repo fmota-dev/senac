@@ -7,7 +7,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  height: 100vh;
+	height: 100vh;
 }
 
 main {
@@ -34,6 +34,11 @@ section {
 .botao:hover {
 	background-color: #c07c24;
 }
+
+button[value='0'] {
+	width: 108px;
+}
+
 #display {
 	background-color: white;
 	padding: 15px;
@@ -47,6 +52,7 @@ section {
 }
 
 #calcular {
+	height: 106px;
 	background: #7ba4c2;
 }
 

@@ -65,7 +65,7 @@ function calcular() {
 	let displayElement = document.getElementById('display');
 	let display = displayElement.innerText; // Definindo a variável display dentro da função calcular
 	if (display) {
-		let expressao = display.replaceAll('x', '*');
+		let expressao = display.replaceAll('x', '*').replaceAll('÷', '/');
 		try {
 			let displayFinal = eval(expressao);
 			displayElement.innerText = displayFinal;
