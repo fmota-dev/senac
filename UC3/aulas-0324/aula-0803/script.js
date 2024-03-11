@@ -7,7 +7,7 @@ function inserir(valor) {
 	let display = displayElement.innerText;
 	const ultimoCaractere = display[display.length - 1];
 
-	// Verifica se o cálculo já foi feito e o valor inserido não é um operador ou é um ponto decimal
+	// Verifica se o cálculo já foi feito e o valor inserido não é um operador
 	if (calculoFeito && !operadores.includes(valor)) { 
 		displayElement.innerText = valor;
 		calculoFeito = false;
