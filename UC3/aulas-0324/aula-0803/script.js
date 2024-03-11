@@ -8,7 +8,7 @@ function inserir(valor) {
 	const ultimoCaractere = display[display.length - 1];
 
 	// Verifica se o cálculo já foi feito e o valor inserido não é um operador ou é um ponto decimal
-	if (calculoFeito && (!operadores.includes(valor) || valor === '.')) { 
+	if (calculoFeito && !operadores.includes(valor)) { 
 		displayElement.innerText = valor;
 		calculoFeito = false;
 	} 
@@ -72,6 +72,7 @@ function calcular() {
 			calculoFeito = true;
 		} catch (erro) {
 			displayElement.innerText = 'Expressão inválida';
+			calculoFeito = true;
 		}
 	}
 }
