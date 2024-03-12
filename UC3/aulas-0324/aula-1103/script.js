@@ -26,6 +26,7 @@ function criarItemTarefa(tarefa) {
 
 	// Criar uma div para conter os botões de ação (concluir e excluir)
 	let divBotoes = document.createElement('div');
+  divBotoes.classList.add('botoes-container'); // Adicionar uma classe para estilização
 
 	// Criar botão de concluir
 	let btnConcluir = document.createElement('button');
@@ -39,7 +40,6 @@ function criarItemTarefa(tarefa) {
 
 	// Configurar a estrutura do item da tarefa
 	itemTarefa.textContent = tarefa; // Definir o texto da tarefa
-	divBotoes.classList.add('botoes-container'); // Adicionar uma classe para estilização
 
 	// Adicionar os botões à div de botões
 	divBotoes.appendChild(btnConcluir);
