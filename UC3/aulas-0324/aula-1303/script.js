@@ -18,11 +18,12 @@ btnDepositar.addEventListener("click", depositarValor);
 function retirarValor(event) {
   event.preventDefault();
   let valorRetirada = parseFloat(inputRetirada.value);
+  console.log(valorRetirada);
 
-  if (valorRetirada > saldoAtual) {
-    alert("Saldo insuficiente!");
-  } else if (valorRetirada <= 0) {
-    alert("Valor inválido!");
+  if (!valorRetirada) {
+    alert("Valor inválido");
+  } else if (valorRetirada > saldoAtual) {
+    alert("Saldo insuficiente");
   } else {
     saldoAtual -= valorRetirada;
     saldo.innerText = `Saldo: R$${saldoAtual.toFixed(2)}`;
