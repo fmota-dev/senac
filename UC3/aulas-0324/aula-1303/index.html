@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Controle de finanças</title>
+</head>
+
+<body>
+  <h1>Controle de finanças</h1>
+
+  <div class="deposito">
+    <h2>Depósito</h2>
+    <form action="">
+      <input type="number" name="valor" placeholder="Valor" id="inputDeposito">
+      <input type="text" name="descricao" placeholder="Descrição" id="descricao">
+      <button type="submit" id="btnDepositar">Depositar</button>
+    </form>
+  </div>
+
+  <div class="saque">
+    <h2>Retirar</h2>
+    <form action="">
+      <input type="number" name="valor" placeholder="Valor" id="inputRetirada">
+      <button type="submit" id="btnRetirar">Retirar</button>
+    </form>
+  </div>
+
+  <div>
+    <h2 id="saldo">Saldo: R$ 0,00</h2>
+  </div>
+
+  <ul id="ultimas-transacoes">
+    <li><span id="tipo-transacao">Deposito</span>: R$ 100,00 (10/10/2020)</li>
+  </ul>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

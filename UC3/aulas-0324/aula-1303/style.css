@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+}
+
+.deposito h2 {
+  text-align: center;
+  color: #0c8931;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.deposito button {
+  background-color: #0c8931;
+}
+
+.deposito button:hover {
+  background-color: #0a6e27;
+}
+
+.saque h2 {
+  text-align: center;
+  color: #c00;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.saque button {
+  background-color: #c00;
+}
+
+.saque button:hover {
+  background-color: #872727;
+}
+
+#ultimas-transacoes li {
+  list-style: none;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
