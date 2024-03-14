@@ -16,9 +16,10 @@ let tipoTransacao;
 
 const data = new Date();
 let dia = data.getDate(); // 1-31
-let mes = data.getMonth(); // 0-11 (zero=janeiro)
+let mes = data.getMonth() + 1; // 0-11 (zero=janeiro)
+let mesFormatado = mes.toString().padStart(2, '0');
 let ano = data.getFullYear(); // 4 dígitos
-let dataCompleta = `${dia}/${mes + 1}/${ano}`;
+let dataCompleta = `${dia}/${mesFormatado}/${ano}`;
 
 function depositarValor(event) {
 	event.preventDefault();
