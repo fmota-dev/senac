@@ -10,8 +10,8 @@ let btnRetirar = document.getElementById('btnRetirar');
 let valorInvalido = document.createElement('span');
 
 let transacoes = document.querySelector('.transacoes');
-let ultimasTransacoes = document.createElement('ul');
-ultimasTransacoes.classList.add('transacoes-lista');
+let transacoesLista = document.createElement('ul');
+transacoesLista.classList.add('transacoes-lista');
 let tipoTransacao;
 
 const data = new Date();
@@ -33,7 +33,7 @@ function depositarValor(event) {
 		saldo.innerText = `Saldo atual: R$ ${saldoAtual.toFixed(2)}`;
 		inputDeposito.value = '';
 		tipoTransacao = 'Depósito';
-		movimentacoes(tipoTransacao, valorDeposito);
+		adicionarTransacao(tipoTransacao, valorDeposito);
 	}
 
 	inputDeposito.addEventListener('click', () => {
@@ -58,7 +58,7 @@ function retirarValor(event) {
 		saldo.innerText = `Saldo atual: R$ ${saldoAtual.toFixed(2)}`;
 		tipoTransacao = 'Retirada';
 		inputRetirada.value = '';
-		movimentacoes(tipoTransacao, valorRetirada);
+		adicionarTransacao(tipoTransacao, valorRetirada);
 	}
 
 	inputRetirada.addEventListener('click', () => {
@@ -66,21 +66,21 @@ function retirarValor(event) {
 	});
 }
 
-function movimentacoes(tipoTransacao, valor) {
-	ultimasTransacoes.classList.add('ativo');
+function adicionarTransacao(tipoTransacao, valor) {
+	transacoesLista.classList.add('ativo');
 
-	let novaMovimentacao = document.createElement('li');
-	novaMovimentacao.textContent = `${tipoTransacao}: R$ ${valor} (${dataCompleta}) - Novo saldo R$ ${saldoAtual}`;
-	novaMovimentacao.classList.add('item-transacao');
+	let novaTransacao = document.createElement('li');
+	novaTransacao.textContent = `${tipoTransacao}: R$ ${valor} (${dataCompleta}) - Novo saldo R$ ${saldoAtual}`;
+	novaTransacao.classList.add('transacao-item');
 
 	if (tipoTransacao == 'Depósito') {
-		novaMovimentacao.classList.add('transacao-deposito');
+		novaTransacao.classList.add('transacao-deposito');
 	} else {
-		novaMovimentacao.classList.add('transacao-retirada');
+		novaTransacao.classList.add('transacao-retirada');
 	}
 
-	transacoes.appendChild(ultimasTransacoes);
-	ultimasTransacoes.appendChild(novaMovimentacao);
+	transacoes.appendChild(transacoesLista);
+	transacoesLista.appendChild(novaTransacao);
 }
 
 btnDepositar.addEventListener('click', depositarValor);

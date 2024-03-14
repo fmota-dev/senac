@@ -109,19 +109,15 @@ button {
 	text-align: center;
 }
 
-.transacoes-lista {
-	display: none;
+.transacoes-lista.ativo {
+	display: flex;
 	padding: 20px;
 	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12),
 		0 1px 3px 0 rgba(0, 0, 0, 0.2);
 	flex-direction: column-reverse;
 }
 
-.transacoes-lista.ativo {
-	display: flex;
-}
-
-.item-transacao {
+.transacao-item {
 	display: flex;
 	align-items: center;
 	gap: 5px;
