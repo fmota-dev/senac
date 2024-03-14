@@ -4,37 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <title>Controle de finanças</title>
 </head>
 
 <body>
-  <h1>Controle de finanças</h1>
+  <header>
+    <h1>Controle de finanças</h1>
+  </header>
 
-  <div class="deposito">
-    <h2>Depósito</h2>
-    <form action="">
-      <input type="number" name="valor" placeholder="Valor" id="inputDeposito">
-      <input type="text" name="descricao" placeholder="Descrição" id="descricao">
-      <button type="submit" id="btnDepositar">Depositar</button>
-    </form>
-  </div>
+  <main>
+    <section class="operacoes">
+      <div class="deposito">
+        <h2>Depositar</h2>
+        <form action="">
+          <input type="tel" name="valor" placeholder="Valor" id="inputDeposito" maxlength="7">
+          <button type="submit" id="btnDepositar">Depositar</button>
+        </form>
+      </div>
 
-  <div class="saque">
-    <h2>Retirar</h2>
-    <form action="">
-      <input type="number" name="valor" placeholder="Valor" id="inputRetirada">
-      <button type="submit" id="btnRetirar">Retirar</button>
-    </form>
-  </div>
+      <div class="saque">
+        <h2>Retirar</h2>
+        <form action="">
+          <input type="number" name="valor" placeholder="R$" id="inputRetirada">
+          <button type="submit" id="btnRetirar">Retirar</button>
+        </form>
+      </div>
 
-  <div>
-    <h2 id="saldo">Saldo: R$ 0,00</h2>
-  </div>
+      <div class="container-saldo">
+        <h2 id="saldo">Saldo atual: R$ 0,00</h2>
+      </div>
+    </section>
 
-  <ul id="ultimas-transacoes">
-    <li><span id="tipo-transacao">Deposito</span>: R$ 100,00 (10/10/2020)</li>
-  </ul>
+    <section class="transacoes">
+      <h2>Ultimas Movimentações</h2>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
