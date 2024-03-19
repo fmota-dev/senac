@@ -3,6 +3,7 @@ const senhaCadastro = document.getElementById('senha-cadastro');
 const botaoCadastrar = document.getElementById('btn-cadastrar');
 const inputTermos = document.getElementById('termos-e-condicoes');
 const botaoFecharModal = document.querySelector('.close');
+const btnDesbugar = document.getElementById('btn-desbugar');
 let usuariosCadastrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
 function realizarCadastro(event) {
@@ -27,9 +28,9 @@ function realizarCadastro(event) {
 	} else if (!inputTermos.checked && usuario && senha) {
 		abrirModal('Aceite os termos e condições!');
 		botaoFecharModal.addEventListener('click', fecharModal);
-  } else {
-    abrirModal('Preencha todos os campos!');
-  }
+	} else {
+		abrirModal('Preencha todos os campos!');
+	}
 	botaoFecharModal.addEventListener('click', fecharModal);
 }
 
@@ -45,13 +46,11 @@ function fecharModal() {
 	modal.classList.remove('ativo');
 }
 
-botaoCadastrar.addEventListener('click', realizarCadastro);
-
 function desbugar() {
 	localStorage.removeItem('usuarios');
-  localStorage.clear();
-  window.location.reload();
+	localStorage.clear();
+	window.location.reload();
 }
 
-const btnDesbugar = document.getElementById('btn-desbugar');
+botaoCadastrar.addEventListener('click', realizarCadastro);
 btnDesbugar.addEventListener('click', desbugar);

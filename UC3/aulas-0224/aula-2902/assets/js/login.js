@@ -1,7 +1,9 @@
 let usuarioLogin = document.getElementById('usuario-login');
 let senhaLogin = document.getElementById('senha-login');
-const botaoLogin = document.getElementById('btn-login');
 let usuariosCadastrados = JSON.parse(localStorage.getItem('usuarios')) || [];
+const botaoLogin = document.getElementById('btn-login');
+const btnDesbugar = document.getElementById('btn-desbugar');
+const botaoFecharModal = document.querySelector('.close');
 
 function realizarLogin(event) {
 	event.preventDefault();
@@ -29,13 +31,11 @@ function realizarLogin(event) {
 			senhaLogin.value = '';
 		} else {
 			abrirModal('Usuário ou senha incorretos!');
-			let botaoFechar = document.querySelector('.close');
-			botaoFechar.addEventListener('click', fecharModal);
+			botaoFecharModal.addEventListener('click', fecharModal);
 		}
 	} else {
 		abrirModal('Preencha todos os campos!');
-		let botaoFechar = document.querySelector('.close');
-		botaoFechar.addEventListener('click', fecharModal);
+		botaoFecharModal.addEventListener('click', fecharModal);
 	}
 }
 
@@ -51,4 +51,11 @@ function fecharModal() {
 	modal.classList.remove('ativo');
 }
 
+function desbugar() {
+	localStorage.removeItem('usuarios');
+	localStorage.clear();
+	window.location.reload();
+}
+
+btnDesbugar.addEventListener('click', desbugar);
 botaoLogin.addEventListener('click', realizarLogin);
