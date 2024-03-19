@@ -122,27 +122,6 @@ input:focus {
 
 /* CADASTRO */
 
-#cadastro .container {
-	height: auto;
-}
-
-#cadastro section {
-	padding: 0.3125rem;
-}
-
-#cadastro main {
-	padding: 40px;
-}
-
-input[type='date']::-webkit-calendar-picker-indicator {
-	filter: invert(100%); /* Inverte as cores do ícone */
-}
-
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-}
-
 input[type='checkbox'] {
 	border: 0.125rem solid #a2a8b1;
 	appearance: none;
@@ -174,9 +153,56 @@ input[type='checkbox']:focus {
 	margin-right: 0.3125rem;
 }
 
-#cadastro .botoes {
-	flex-direction: row;
-	gap: 0.9375rem;
+.modal {
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.ativo {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	background-color: #030917;
+	color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 20%;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 0.8rem;
+}
+
+.modal-content span {
+	cursor: pointer;
+	color: #347cdb;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.desbugar button {
+	cursor: pointer;
+	padding: 20px;
+	border-radius: 5px;
+	margin-top: 50px;
+	border: 1px solid #888;
+	background-color: #030917;
+	color: #fff;
 }
 
 @media (width < 768px) {

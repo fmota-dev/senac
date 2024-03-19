@@ -17,41 +17,18 @@
         <h1>CADASTRO</h1>
         <form action="">
           <!-- NOME -->
-          <label for="nome">Nome completo:</label>
-          <input type="text" name="nome" id="nome" required>
-
-          <!-- EMAIL -->
-          <label for="email">E-mail:</label>
-          <input type="email" name="email" id="email" required>
-
-          <!-- DATA DE NASCIMENTO -->
-          <label for="nascimento">Data de Nascimento:</label>
-          <input type="date" name="nascimento" id="nascimento" required>
-
-          <!-- GÊNERO -->
-          <label for="genero">Gênero</label>
-          <select name="genero" id="genero" required>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="outro">Outro</option>
-          </select>
-
-          <!-- TELEFONE -->
-          <label for="telefone">Telefone</label>
-          <input type="number" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx" required minlength="11">
+          <label for="nome">Usuário:</label>
+          <input type="text" name="usuario" id="usuario-cadastro" required>
 
           <!-- SENHA -->
-          <label for="senha">Insira uma senha</label>
-          <input type="password" name="senha" id="senha" required>
+          <label for="senha">Senha:</label>
+          <input type="password" name="senha" id="senha-cadastro" required>
 
-          <!-- CONFIRMAR SENHA -->
-          <label for="confirmar-senha">Confirme sua senha</label>
-          <input type="password" name="confirmar-senha" id="confirmar-senha" required>
 
           <!-- ACEITAR TERMOS E CONDIÇÕES -->
           <div class="termos-e-condicoes">
             <label for="termos-e-condicoes">Aceito os termos e condições</label>
-            <input type="checkbox" id="termos-e-condicoes" required>
+            <input type="checkbox" id="termos-e-condicoes">
           </div>
 
           <!-- BOTÕES -->
@@ -60,9 +37,24 @@
             <a href="./login.html">Já possui uma conta? Faça login!</a>
           </div>
         </form>
+
+        <div class="modal">
+          <div class="modal-content">
+            <p id="modal-text"></p>
+            <span class="close">&#10006;</span>
+          </div>
+        </div>
       </div>
+
     </section>
+    <div class="desbugar">
+      <button id="btn-desbugar">Desbugar</button>
+    </div>
   </main>
+
+
+
+  <script src="./assets/js/cadastro.js"></script>
 </body>
 
 </html>
