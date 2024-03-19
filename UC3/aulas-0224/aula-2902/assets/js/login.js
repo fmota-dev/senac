@@ -1,9 +1,9 @@
-let usuarioLogin = document.getElementById('usuario-login');
-let senhaLogin = document.getElementById('senha-login');
-let usuariosCadastrados = JSON.parse(localStorage.getItem('usuarios')) || [];
+const usuarioLogin = document.getElementById('usuario-login');
+const senhaLogin = document.getElementById('senha-login');
 const botaoLogin = document.getElementById('btn-login');
 const btnDesbugar = document.getElementById('btn-desbugar');
 const botaoFecharModal = document.querySelector('.close');
+let usuariosCadastrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
 function realizarLogin(event) {
 	event.preventDefault();
