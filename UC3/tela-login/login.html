@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/imgs/favicon.jpg" type="image/jpg">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <title>Tela | Login</title>
+</head>
+
+<body>
+  <main class="container">
+    <img src="assets/imgs/img-forms.jpg" alt="">
+    <section>
+      <div>
+        <h1>FAZER LOGIN</h1>
+        <form action="">
+          <!-- USUÁRIO -->  
+          <label for="usuario">Usuário:</label>
+          <input type="text" name="usuario" id="usuario-login" placeholder="Digite seu usuário" required minlength="4" maxlength="12">
+
+          <!-- SENHA -->
+          <label for="senha">Senha:</label>
+          <input type="password" name="senha" id="senha-login" placeholder="Digite sua senha" required minlength="4" maxlength="8">
+
+          <!-- BOTÕES -->
+          <div class="botoes">
+            <button id="btn-login" type="submit">ENTRAR</button>
+            <a href="./cadastro.html">Não possui uma conta? Cadastre-se agora!</a>
+          </div>
+        </form>
+
+        <div class="modal">
+          <div class="modal-content">
+            <p id="modal-text"></p>
+            <span class="close">&#10006;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./assets/js/login.js" defer></script>
+</body>
+
+</html>

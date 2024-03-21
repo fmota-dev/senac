@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/imgs/favicon.jpg" type="image/jpg">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <title>Tela | Cadastro</title>
+</head>
+
+<body id="cadastro">
+  <main class="container">
+    <section>
+      <div>
+        <h1>CADASTRO</h1>
+        <form action="">
+          <!-- NOME -->
+          <label for="nome">Usuário:</label>
+          <input type="text" name="usuario" id="usuario-cadastro" required minlength="4" maxlength="12">
+
+          <!-- SENHA -->
+          <label for="senha">Senha:</label>
+          <input type="password" name="senha" id="senha-cadastro" required minlength="4" maxlength="8">
+
+
+          <!-- ACEITAR TERMOS E CONDIÇÕES -->
+          <div class="termos-e-condicoes">
+            <label for="termos-e-condicoes">Aceito os termos e condições</label>
+            <input type="checkbox" id="termos-e-condicoes">
+          </div>
+
+          <!-- BOTÕES -->
+          <div class="botoes">
+            <button id="btn-cadastrar" type="submit" required>CADASTRAR</button>
+            <a href="./login.html">Já possui uma conta? Faça login!</a>
+          </div>
+        </form>
+
+        <div class="modal">
+          <div class="modal-content">
+            <p id="modal-text"></p>
+            <span class="close">&#10006;</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+
+
+  <script src="./assets/js/cadastro.js"></script>
+</body>
+
+</html>
