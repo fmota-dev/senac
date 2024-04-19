@@ -8,11 +8,19 @@ class Conta {
     }
 
     depositar(valor) {
-        this.saldo += valor;
+        if(valor > 0 && typeof valor === 'number') {
+            this.saldo += valor;
+        } else {
+            console.log('Valor inválido');
+        }
     }
 
     sacar(valor) {
-        this.saldo -= valor;
+        if(valor > 0 && typeof valor === 'number' && valor <= this.saldo) {
+            this.saldo -= valor;
+        } else {
+            console.log('Valor inválido ou saldo insuficiente');
+        }
     }
 
     getSaldo() {
