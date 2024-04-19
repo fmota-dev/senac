@@ -1,9 +1,1 @@
-{ 
-   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
-}
+{"scripts":{"test":"jest","test:watch":"jest --watch"},"devDependencies":{"jest":"^29.7.0"},"dependencies":{"express":"^4.19.2"}}
