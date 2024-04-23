@@ -1,8 +1,9 @@
 class Aluno {
-    constructor(nome, matricula, disciplina) {
+    constructor(nome, matricula) {
         this.nome = nome;
         this.matricula = matricula;
-        this.disciplina = disciplina;
+        this.disciplinas = [];
+        this.notas = {};
     }
 
 
@@ -27,7 +28,18 @@ class Aluno {
     }
 
     setDisciplina(disciplina) {
-        this.disciplina = disciplina;
+        this.disciplinas.push(disciplina);
+    }
+
+    setNota(disciplina, nota) {
+        let codigo = disciplina.getCodigo();
+        this.notas[codigo] = this.notas[codigo] || [];
+        this.notas[codigo].push(nota);
+    }
+
+
+    getNota(disciplina) {
+        return `O aluno ${this.nome} obteve a nota ${this.notas[disciplina.getCodigo()]} na disciplina ${disciplina.getNome()}.`;
     }
 
     getDados() {
