@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Solicitar Orçamentos</title>
+</head>
+
+<body>
+  <h1>Solicitar orçamento</h1>
+  <form action="/orcamentos" method="post" class="container">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required />
+
+    <label for="telefone">Telefone</label>
+    <input type="tel" name="telefone" id="telefone" required />
+
+    <label for="tipoServico">Tipo de Serviço</label>
+    <select name="tipoServico" id="tipo-servico" required>
+      <option value="Construção">Construção</option>
+      <option value="Reforma">Reforma</option>
+      <option value="Pintura">Pintura</option>
+      <option value="Elétrica">Elétrica</option>
+      <option value="Hidraulica">Hidráulica</option>
+    </select>
+
+    <label for="descricao">Descrição</label>
+    <textarea name="descricao" id="descricao" required></textarea>
+
+    <button type="submit" id="btnEnviar">Enviar</button>
+  </form>
+</body>
+
+</html>
