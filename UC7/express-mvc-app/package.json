@@ -1,0 +1,18 @@
+{
+  "name": "express-mvc-app",
+  "version": "1.0.0",
+  "description": "Projeto em nodeJS aplicando a arquitetura MVC",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Filipe Mota",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
