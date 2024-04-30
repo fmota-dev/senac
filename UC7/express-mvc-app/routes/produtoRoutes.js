@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", produtoController.home);
 router.get("/cadastro", produtoController.formCadastro);
 router.post("/cadastro", produtoController.cadastro);
-router.get("/listagem", produtoController.listagem);
+router.get("/listaProdutos", produtoController.listarProdutos);
 
 module.exports = router;
 

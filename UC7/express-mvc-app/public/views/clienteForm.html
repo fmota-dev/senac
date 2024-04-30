@@ -7,5 +7,14 @@
 </head>
 <body>
     <h1>Cadastrar Cliente</h1>
+
+    <form action="/cliente/cadastro" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" required>
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone" id="telefone" required>
+        <button type="submit">Cadastrar</button>
 </body>
 </html>

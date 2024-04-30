@@ -1,6 +1,6 @@
 const path = require('path');
 const produtoModel = require('../models/produtoModel');
-let id = 1;
+let idProduto = 1;
 let produtos  = [];
 
 class ProdutoController {
@@ -14,13 +14,13 @@ class ProdutoController {
 
   cadastro(req, res) {
     const { nome, preco } = req.body;
-    const produto = new produtoModel(id, nome, preco);
+    const produto = new produtoModel(idProduto, nome, preco);
     produtos.push(produto);
     res.send(`Dados recebidos: ID ${produto.id}, Nome ${produto.nome}, Preço ${produto.preco}`);
-    id++;
+    idProduto++;
   }
 
-  listagem(req, res) {
+  listarProdutos(req, res) {
     res.json(produtos);
   }
 

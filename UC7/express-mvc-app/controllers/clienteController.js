@@ -1,5 +1,7 @@
 const path = require('path');
 const clienteModel = require('../models/clienteModel');
+let idCliente = 0;
+let clientes = [];
 
 class ClienteController {
     home(req, res) {
@@ -12,8 +14,14 @@ class ClienteController {
 
     cadastro(req, res) {
         const { id, nome, email, telefone } = req.body;
-        const cliente = new clienteModel(id, nome, email, telefone);
+        const cliente = new clienteModel(idCliente, nome, email, telefone);
+        clientes.push(cliente);
         res.send(`Cliente ${cliente.nome} cadastrado com sucesso!`);
+        idCliente++;
+    }
+
+    listarClientes(req, res) {
+        res.json(clientes);
     }
 }
 
