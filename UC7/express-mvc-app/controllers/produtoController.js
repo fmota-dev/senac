@@ -1,5 +1,7 @@
 const path = require('path');
 const produtoModel = require('../models/produtoModel');
+let id = 1;
+let produtos  = [];
 
 class ProdutoController {
   home(req, res) {
@@ -11,10 +13,17 @@ class ProdutoController {
   }
 
   cadastro(req, res) {
-    const { id, nome, preco } = req.body;
+    const { nome, preco } = req.body;
     const produto = new produtoModel(id, nome, preco);
-    res.send(`Produto ${produto.nome} cadastrado com sucesso!`);
+    produtos.push(produto);
+    res.send(`Dados recebidos: ID ${produto.id}, Nome ${produto.nome}, Preço ${produto.preco}`);
+    id++;
   }
+
+  listagem(req, res) {
+    res.json(produtos);
+  }
+
 }
 
 module.exports = new ProdutoController();

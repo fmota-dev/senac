@@ -7,5 +7,13 @@
 </head>
 <body>
     <h1>Cadastro de produto</h1>
+
+    <form action="/produtos/cadastro" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        
+        <label for="preco">Preço:</label>
+        <input type="number" name="preco" id="preco" required>
+        <button type="submit">Cadastrar</button>
 </body>
 </html>

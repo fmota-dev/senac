@@ -14,7 +14,7 @@ app.use("/fornecedores", fornecedorRoutes);
 app.use("/clientes", clienteRoutes);
 
 app.listen(port, () => {
-  console.log(`Aplicação rodando em -> localhost:${port}`);
+  console.log(`Aplicação rodando em -> http://localhost:${port}`);
 });
 
 app.get("/", (req, res) => {
