@@ -1,18 +1,19 @@
 {
-  "name": "express-mvc-app",
+  "name": "aula29-04",
   "version": "1.0.0",
-  "description": "Projeto em nodeJS aplicando a arquitetura MVC",
+  "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js"
   },
-  "author": "Filipe Mota",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.19.2"
-  },
   "devDependencies": {
     "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
   }
 }

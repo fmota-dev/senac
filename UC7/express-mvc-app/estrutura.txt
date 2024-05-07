@@ -1,0 +1,20 @@
+/express-mvc-app
+|-- /controllers
+|   |-- produtoController.js
+|   |-- clienteController.js
+|   |-- fornecedorController.js
+|-- /models
+|   |-- produtoModel.js
+|   |-- clienteModel.js
+|   |-- fornecedorModel.js
+|-- /routes
+|   |-- produtoRoutes.js
+|   |-- clienteRoutes.js
+|   |-- fornecedorRoutes.js
+|-- /public
+|   |-- produtoForm.html
+|   |-- clienteForm.html
+|   |-- fornecedorForm.html
+|-- app.js
+
+

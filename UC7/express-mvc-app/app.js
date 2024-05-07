@@ -1,22 +1,22 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 3000;
-const produtoRoutes = require("./routes/produtoRoutes");
-const fornecedorRoutes = require("./routes/fornecedorRoutes");
-const clienteRoutes = require("./routes/clienteRoutes");
-
+const path = require('path');
+const produtoRoutes = require ('./routes/produtoRoutes');
+const clienteRoutes = require('./routes/clienteRoutes');
+const fornecedorRoutes = require('./routes/fornecedorRoutes');
+app.use(express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public"));
+app.use(express.urlencoded({extended:false}));
 
-app.use("/produtos", produtoRoutes);
-app.use("/fornecedores", fornecedorRoutes);
-app.use("/clientes", clienteRoutes);
+app.use('/produto', produtoRoutes);
+app.use('/cliente', clienteRoutes);
+app.use('/fornecedor', fornecedorRoutes);
 
-app.listen(port, () => {
-  console.log(`Aplicação rodando em -> http://localhost:${port}`);
+app.get('/', (req, res)=>{
+    res.sendFile(path.join(__dirname, './public/html', 'index.html'));
 });
 
-app.get("/", (req, res) => {
-  res.send("Olá, mundo!");
+app.listen(port, () =>{
+    console.log(`Aplicação rodando em: http://localhost:${port}`);
 });

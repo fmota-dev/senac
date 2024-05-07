@@ -1,28 +1,28 @@
 const path = require('path');
 const clienteModel = require('../models/clienteModel');
-let idCliente = 0;
-let clientes = [];
+let id = 0;
+let listaClientes = [];
 
-class ClienteController {
-    home(req, res) {
-        res.send("Essa é a rota home dos clientes")
+class ClienteCrontoller{
+    home(req, res){
+        //res.send('Rota dos clientes');
+        res.sendFile(path.join(__dirname, '../public/html/cliente', 'homepageCliente.html'));
     }
-    
-    formCadastro(req, res) {
-        res.sendFile(path.join(__dirname, "../public/views/clienteForm.html"));
+    formCadastro(req, res){
+        res.sendFile(path.join(__dirname, '../public/html/cliente', 'clienteForm.html'));
+    }
+    cadastro(req, res){
+        const {nome, email} = req.body;
+        id++;
+        let cliente = new clienteModel(id, nome, email);
+        listaClientes.push(cliente);
+        res.send("Dados cadastrados com sucesso!");
     }
 
-    cadastro(req, res) {
-        const { id, nome, email, telefone } = req.body;
-        const cliente = new clienteModel(idCliente, nome, email, telefone);
-        clientes.push(cliente);
-        res.send(`Cliente ${cliente.nome} cadastrado com sucesso!`);
-        idCliente++;
+    listarClientes(req, res){
+        res.json({listaClientes})
     }
 
-    listarClientes(req, res) {
-        res.json(clientes);
-    }
 }
 
-module.exports = new ClienteController();
+module.exports = new ClienteCrontoller();

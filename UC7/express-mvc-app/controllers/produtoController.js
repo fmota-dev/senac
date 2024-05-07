@@ -1,29 +1,29 @@
-const path = require('path');
-const produtoModel = require('../models/produtoModel');
-let idProduto = 1;
-let produtos  = [];
+const path = require("path");
+const produtoModel = require("../models/produtoModel");
+let id = 0;
+let listaProdutos = [];
 
 class ProdutoController {
   home(req, res) {
-    res.send("Essa é a rota home dos produtos")
+    res.sendFile(
+      path.join(__dirname, "../public/html/produto", "homepageProduto.html")
+    );
   }
-
   formCadastro(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/produtoForm.html"));
+    res.sendFile(
+      path.join(__dirname, "../public/html/produto", "produtoForm.html")
+    );
   }
-
   cadastro(req, res) {
     const { nome, preco } = req.body;
-    const produto = new produtoModel(idProduto, nome, preco);
-    produtos.push(produto);
-    res.send(`Dados recebidos: ID ${produto.id}, Nome ${produto.nome}, Preço ${produto.preco}`);
-    idProduto++;
+    id++;
+    let produto = new produtoModel(id, nome, preco);
+    listaProdutos.push(produto);
+    res.send({ "Dados gravados com sucesso!": produto });
   }
 
-  listarProdutos(req, res) {
-    res.json(produtos);
+  listagem(req, res) {
+    res.json(listaProdutos);
   }
-
 }
-
 module.exports = new ProdutoController();
