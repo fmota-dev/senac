@@ -25,5 +25,9 @@ class ProdutoController {
   listagem(req, res) {
     res.json(listaProdutos);
   }
+
+  visualizarProdutos(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/produto", "listarProdutos.html"));
+    }
 }
 module.exports = new ProdutoController();

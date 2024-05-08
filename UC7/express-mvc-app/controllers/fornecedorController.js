@@ -29,6 +29,9 @@ class FornecedorController {
   listagem(req, res) {
     res.json(listaFornecedores);
   }
-}
 
+  visualizarFornecedores(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/fornecedor", "listarFornecedores.html"));
+  }
+}
 module.exports = new FornecedorController();
