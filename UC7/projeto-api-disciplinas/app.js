@@ -8,7 +8,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/course', courseRoutes)
+app.use(courseRoutes)
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/html", "index.html"));
