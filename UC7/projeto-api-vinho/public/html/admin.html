@@ -9,12 +9,21 @@
 </head>
 
 <body id="admin">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Catálago de Vinhos</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
         <h1>Administração de Vinhos</h1>
 
         <div class="admin-forms">
             <form action="/vinhos" method="POST">
                 <h2>Adicionar Novo Vinho</h2>
+
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
 
@@ -39,6 +48,10 @@
 
             <form action="/vinhos/:id" method="POST">
                 <h2>Editar Vinho</h2>
+
+                <label for="edit-id">ID:</label>
+                <input type="number" id="edit-id" name="id">
+
                 <label for="edit-nome">Nome:</label>
                 <input type="text" id="edit-nome" name="nome">
 
@@ -64,6 +77,11 @@
                 <button type="submit">Deletar Vinho</button>
             </form>
         </div>
+
+        <h2>Lista de vinhos cadastrados</h2>
+        <ul id="list-wines">
+
+        </ul>
     </div>
 
     <script src="../js/script.js"></script>

@@ -8,7 +8,7 @@ class Vinho {
     this.safra = safra;
     this.pais = pais;
     this.tipo = tipo;
-    this.preco = preco;
+    this.preco = "R$" + preco;
     this.imagem = imagem;
   }
 
