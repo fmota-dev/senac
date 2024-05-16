@@ -2,13 +2,14 @@ const listaVinhos = [];
 let id = 1;
 
 class Vinho {
-  constructor(nome, safra, pais, tipo, preco) {
+  constructor(nome, safra, pais, tipo, preco, imagem) {
     this.id = id;
     this.nome = nome;
     this.safra = safra;
     this.pais = pais;
     this.tipo = tipo;
     this.preco = preco;
+    this.imagem = imagem;
   }
 
   obterTodosVinhos() {
