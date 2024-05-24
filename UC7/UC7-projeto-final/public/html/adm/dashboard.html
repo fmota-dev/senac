@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Eventos</title>
+  <link rel="stylesheet" href="../../css/dashboard.css"> </head>
+<body>
+  <a href="/">Lista de eventos</a>
+
+  <h1>Dashboard de Eventos</h1>
+
+  <div id="eventos-container">
+    </div>
+
+  <button id="btn-novo-evento">Novo Evento</button>
+
+  <div id="modal-novo-evento" class="modal">
+    <h2>Novo Evento</h2>
+    <form id="form-novo-evento">
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" name="titulo" required>
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" rows="5" required></textarea>
+
+      <label for="data">Data:</label>
+      <input type="date" id="data" name="data" required>
+
+      <label for="local">Local:</label>
+      <input type="text" id="local" name="local" required>
+
+      <button type="submit">Criar Evento</button>
+    </form>
+  </div>
+
+  <div id="modal-editar-evento" class="modal">
+    <h2>Editar Evento</h2>
+    <form id="form-editar-evento">
+      <input type="hidden" id="evento-id" name="evento-id">
+
+      <label for="titulo-editar">Título:</label>
+      <input type="text" id="titulo-editar" name="titulo" required>
+
+      <label for="descricao-editar">Descrição:</label>
+      <textarea id="descricao-editar" name="descricao" rows="5" required></textarea>
+
+      <label for="data-editar">Data:</label>
+      <input type="date" id="data-editar" name="data" required>
+
+      <label for="local-editar">Local:</label>
+      <input type="text" id="local-editar" name="local" required>
+
+      <button type="submit">Salvar</button>
+    </form>
+  </div>
+
+  <script src="../../js/dashboard.js"></script> </body>
+</html>
