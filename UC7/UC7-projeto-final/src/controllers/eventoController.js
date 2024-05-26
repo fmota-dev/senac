@@ -1,4 +1,4 @@
-const Evento = require("../models/eventoModel");
+const Evento = require("../../src/models/eventoModel");
 const eventoModel = new Evento();
 
 class EventoController {
