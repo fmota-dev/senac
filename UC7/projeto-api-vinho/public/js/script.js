@@ -1,20 +1,20 @@
 window.onload = function () {
-  const endpointUrl = "http://localhost:3000/vinhos";
-  const wineList = document.getElementById("wine-list");
+	const endpointUrl = 'http://localhost:3000/vinhos';
+	const wineList = document.getElementById('wine-list');
 
-  fetch(endpointUrl)
-    .then((response) => response.json())
-    .then((vinhos) => {
-      vinhos.forEach((vinho) => {
-        const vinhoElement = document.createElement("div");
-        vinhoElement.classList.add("card"); // Adiciona a classe "card" ao elemento criado
+	fetch(endpointUrl)
+		.then((response) => response.json())
+		.then((vinhos) => {
+			vinhos.forEach((vinho) => {
+				const vinhoElement = document.createElement('div');
+				vinhoElement.classList.add('card'); // Adiciona a classe "card" ao elemento criado
 
-        // Adiciona uma imagem se a URL da imagem estiver presente nos dados do vinho
-        const imageHtml = vinho.imagem
-          ? `<img src="${vinho.imagem}" alt="Imagem do Vinho" class="card-image">` // Adiciona a classe "card-image" à imagem
-          : "";
+				// Adiciona uma imagem se a URL da imagem estiver presente nos dados do vinho
+				const imageHtml = vinho.imagem
+					? `<img src="${vinho.imagem}" alt="Imagem do Vinho" class="card-image">` // Adiciona a classe "card-image" à imagem
+					: '';
 
-        const textHtml = `
+				const textHtml = `
                     <div class="card-text">
                         <h2>${vinho.nome}</h2>
                         <p class="safra">Safra: ${vinho.safra}</p>
@@ -25,102 +25,101 @@ window.onload = function () {
                     </div>
                 `;
 
-        vinhoElement.innerHTML = `
+				vinhoElement.innerHTML = `
                     ${textHtml}
                     ${imageHtml}
                 `;
 
-        wineList.appendChild(vinhoElement);
-      });
-    });
+				wineList.appendChild(vinhoElement);
+			});
+		});
 };
 
-const endpointUrl = "http://localhost:3000/vinhos";
+const endpointUrl = 'http://localhost:3000/vinhos';
 
 // Função para adicionar um vinho
 function adicionarVinho(event) {
-  event.preventDefault();
+	event.preventDefault();
 
-  const nome = document.getElementById("nome").value;
-  const safra = document.getElementById("safra").value;
-  const pais = document.getElementById("pais").value;
-  const tipo = document.getElementById("tipo").value;
-  const preco = document.getElementById("preco").value;
-  const imagem = document.getElementById("imagem").value;
+	const nome = document.getElementById('nome').value;
+	const safra = document.getElementById('safra').value;
+	const pais = document.getElementById('pais').value;
+	const tipo = document.getElementById('tipo').value;
+	const preco = document.getElementById('preco').value;
+	const imagem = document.getElementById('imagem').value;
 
-  const vinho = { nome, safra, pais, tipo, preco, imagem };
+	const vinho = { nome, safra, pais, tipo, preco, imagem };
 
-  fetch("/vinhos", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(vinho),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      alert("Vinho adicionado com sucesso!");
-    })
-    .catch((error) => console.error("Error:", error));
+	fetch('/vinhos', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(vinho),
+	})
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data);
+			alert('Vinho adicionado com sucesso!');
+		})
+		.catch((error) => console.error('Error:', error));
 }
 
 // Função para editar um vinho
 function editarVinho(event) {
-  event.preventDefault();
+	event.preventDefault();
 
-  const id = document.getElementById("edit-id").value;
-  const nome = document.getElementById("edit-nome").value;
-  const safra = document.getElementById("edit-safra").value;
-  const pais = document.getElementById("edit-pais").value;
-  const tipo = document.getElementById("edit-tipo").value;
-  const preco = document.getElementById("edit-preco").value;
+	const id = document.getElementById('edit-id').value;
+	const nome = document.getElementById('edit-nome').value;
+	const safra = document.getElementById('edit-safra').value;
+	const pais = document.getElementById('edit-pais').value;
+	const tipo = document.getElementById('edit-tipo').value;
+	const precoElement = document.getElementById('edit-preco');
+	const preco = `R$ ${precoElement.value}`;
 
-  const vinho = { nome, safra, pais, tipo, preco };
+	const vinho = { nome, safra, pais, tipo, preco };
 
-  fetch(`${endpointUrl}/${id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(vinho),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      alert(`Dados do vinho editados com sucesso!`);
-    })
-    .catch((error) => console.error("Error:", error));
-
-  renderizarListaVinhos();
+	fetch(`${endpointUrl}/${id}`, {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(vinho),
+	})
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data);
+			alert(`Dados do vinho editados com sucesso!`);
+		})
+		.catch((error) => console.error('Error:', error));
 }
 
 // Função para deletar um vinho
 function deletarVinho(event) {
-  event.preventDefault();
+	event.preventDefault();
 
-  const id = document.getElementById("delete-id").value;
+	const id = document.getElementById('delete-id').value;
 
-  fetch(`${endpointUrl}/${id}`, {
-    method: "DELETE",
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      alert("Vinho deletado com sucesso!");
-    })
-    .catch((error) => console.error("Error:", error));
+	fetch(`${endpointUrl}/${id}`, {
+		method: 'DELETE',
+	})
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data);
+			alert('Vinho deletado com sucesso!');
+		})
+		.catch((error) => console.error('Error:', error));
 }
 // Função para renderizar uma lista com o ID dos vinhos já cadastrados, para a pagina admin
 function renderizarListaVinhos() {
-  fetch(endpointUrl)
-    .then((response) => response.json())
-    .then((vinhos) => {
-      const listaVinhos = document.getElementById("list-wines");
+	fetch(endpointUrl)
+		.then((response) => response.json())
+		.then((vinhos) => {
+			const listaVinhos = document.getElementById('list-wines');
 
-      vinhos.forEach((vinho) => {
-        const vinhoIdElement = document.createElement("li");
-        vinhoIdElement.innerHTML = `
+			vinhos.forEach((vinho) => {
+				const vinhoIdElement = document.createElement('li');
+				vinhoIdElement.innerHTML = `
           <p>ID: ${vinho.id}</p>
           <p>Nome: ${vinho.nome}</p>
           <p>Safra: ${vinho.safra}</p>
@@ -129,20 +128,20 @@ function renderizarListaVinhos() {
           <p>Preço: ${vinho.preco}</p>
         `;
 
-        listaVinhos.appendChild(vinhoIdElement);
-      });
-    });
+				listaVinhos.appendChild(vinhoIdElement);
+			});
+		});
 }
 
 renderizarListaVinhos();
 
 // Adiciona os event listeners aos formulários
 document
-  .querySelector('form[action="/vinhos"]')
-  .addEventListener("submit", adicionarVinho);
+	.querySelector('form[action="/vinhos"]')
+	.addEventListener('submit', adicionarVinho);
 document
-  .querySelector('form[action="/vinhos/:id"]:nth-child(2)')
-  .addEventListener("submit", editarVinho);
+	.querySelector('form[action="/vinhos/:id"]:nth-child(2)')
+	.addEventListener('submit', editarVinho);
 document
-  .querySelector('form[action="/vinhos/:id"]:nth-child(3)')
-  .addEventListener("submit", deletarVinho);
+	.querySelector('form[action="/vinhos/:id"]:nth-child(3)')
+	.addEventListener('submit', deletarVinho);

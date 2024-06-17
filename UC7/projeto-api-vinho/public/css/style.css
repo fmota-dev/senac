@@ -97,8 +97,9 @@ h1 {
   border-radius: 4px; /* Cantos arredondados */
   cursor: pointer; /* Altere o cursor ao passar o mouse sobre o botão */
   text-transform: uppercase;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.8px;
 }
 
 .btn-comprar:hover {
