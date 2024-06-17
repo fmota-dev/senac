@@ -1,7 +1,7 @@
 // app.js
 const express = require("express");
-const userRoutes = require("./src/routes/User.routes");
-const sequelize = require("./src/database/config"); // Importa a instância do Sequelize
+const userRoutes = require("./routes/User.routes");
+const sequelize = require("./database/config"); // Importa a instância do Sequelize
 
 const app = express();
 app.use(express.json());
