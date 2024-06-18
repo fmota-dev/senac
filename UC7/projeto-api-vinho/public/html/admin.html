@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração de Vinhos</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body id="admin">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Catálago de Vinhos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Administração de Vinhos</h1>
+
+        <div class="admin-forms">
+            <form action="/vinhos" method="POST">
+                <h2>Adicionar Novo Vinho</h2>
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="safra">Safra:</label>
+                <input type="text" id="safra" name="safra" required>
+
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" required>
+
+                <label for="tipo">Tipo:</label>
+                <input type="text" id="tipo" name="tipo" required>
+
+                <label for="preco">Preço:</label>
+                <input type="text" id="preco" name="preco" required>
+
+                <label for="imagem">URL da Imagem:</label>
+                <input type="text" id="imagem" name="imagem">
+
+                <button type="submit">Adicionar Vinho</button>
+            </form>
+
+
+            <form action="/vinhos/:id" method="POST">
+                <h2>Editar Vinho</h2>
+
+                <label for="edit-id">ID:</label>
+                <input type="number" id="edit-id" name="id">
+
+                <label for="edit-nome">Nome:</label>
+                <input type="text" id="edit-nome" name="nome">
+
+                <label for="edit-safra">Safra:</label>
+                <input type="text" id="edit-safra" name="safra">
+
+                <label for="edit-pais">País:</label>
+                <input type="text" id="edit-pais" name="pais">
+
+                <label for="edit-tipo">Tipo:</label>
+                <input type="text" id="edit-tipo" name="tipo">
+
+                <label for="edit-preco">Preço:</label>
+                <input type="text" id="edit-preco" name="preco">
+
+                <button type="submit">Editar Vinho</button>
+            </form>
+
+            <form action="/vinhos/:id" method="POST">
+                <h2>Deletar Vinho</h2>
+                <label for="delete-id">ID:</label>
+                <input type="number" id="delete-id" name="id">
+                <button type="submit">Deletar Vinho</button>
+            </form>
+        </div>
+
+        <h2>Lista de vinhos cadastrados</h2>
+        <ul id="list-wines">
+
+        </ul>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

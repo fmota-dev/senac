@@ -1,0 +1,138 @@
+* {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  list-style: none;
+}
+
+.cabecalho {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 0;
+}
+
+.menu {
+	text-align: center; /* Centraliza o conteúdo */
+}
+
+.menu-lista {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.menu-item {
+	margin: 0 10px;
+}
+
+.menu-link {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 8px 16px;
+	border-radius: 5px;
+	border: 2px solid transparent;
+}
+
+.menu-link:hover {
+	background-color: #fff;
+	color: #333;
+	border-color: #333;
+}
+
+main {
+	padding: 20px;
+	width: 70%; /* Define a largura */
+	margin: auto; /* Centraliza na página */
+}
+
+main section {
+	margin-top: 20px;
+}
+
+main section a {
+	text-decoration: none;
+	background-color: #007bff;
+	color: #fff;
+	padding: 8px 16px; /* Tamanho mediano */
+	margin-bottom: 10px;
+	border-radius: 5px;
+	display: inline-block; /* Torna os links em linha */
+}
+
+main section a:hover {
+	background-color: #0056b3;
+}
+
+/* Conteúdo Lorem */
+.lorem-content {
+	background-color: #f4f4f4;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+.lorem-content p {
+	margin: 10px 0;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#clienteForm main,
+#produtoForm main {
+	margin: 0 auto;
+	width: 50%;
+}
+
+#clienteForm main form,
+#produtoForm main form {
+	background-color: #f4f4f4;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+#clienteForm main form label,
+#produtoForm main form label {
+	display: block;
+	margin-top: 10px;
+}
+
+#clienteForm main form input,
+#produtoForm main form input {
+	padding: 8px;
+	margin-top: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	width: 100%;
+}
+
+#clienteForm main form input[type='submit'],
+#produtoForm main form input[type='submit'] {
+	background-color: #007bff;
+	color: #fff;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 20px;
+	width: 100%;
+}
+
+#clienteForm main form input[type='submit']:hover {
+	background-color: #0056b3;
+}
+
+
+#listaClientes li,
+#listaProdutos li,
+#listaFornecedores li {
+	background-color: #f4f4f4;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 10px;
+}

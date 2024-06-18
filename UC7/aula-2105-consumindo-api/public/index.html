@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Cadastro de Usuário</h1>
+    <form id="cadastroForm">
+        <label for="cep">CEP:</label>
+        <input type="tel" name="cep" id="cep" placeholder="Digite o CEP" minlength="8" maxlength="8" required>
+        <label for="logradouro">Logradouro:</label>
+        <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro" required>
+        <label for="bairro">Bairro:</label>
+        <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
+        <label for="cidade">Cidade:</label>
+        <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
+        <label for="estado">Estado:</label>
+        <input type="text" name="estado" id="estado" placeholder="Estado" required>
+        <button type="submit">Cadastrar</button>
+        <div id="error"></div>
+    </form>
+    <script src="./script-aula.js"></script>
+</body>
+
+</html>

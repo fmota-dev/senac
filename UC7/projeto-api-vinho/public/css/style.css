@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #591214;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 30px;
+  width: 100%;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-align: right;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* style.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  display: flex; /* Use flexbox para organizar os elementos em linha */
+  align-items: center; /* Alinhe os itens verticalmente ao centro */
+  justify-content: space-between;
+  background-color: #fff; /* Fundo branco para o cartão */
+  border: 1px solid #591214; /* Borda suave */
+  border-left: 50px solid #37090a; /* Borda suave */
+  border-radius: 8px; /* Cantos arredondados */
+  padding: 20px; /* Espaçamento interno */
+  margin-bottom: 20px; /* Margem inferior entre os cartões */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.247); /* Sombra suave */
+}
+
+.card h2 {
+  font-size: 32px; /* Tamanho da fonte aumentado para o título */
+  margin-bottom: 5px; /* Margem inferior reduzida para o título */
+  color: #591214; /* Cor do texto mais suave */ /* Cor do texto mais escuro */
+}
+
+.card p {
+  margin-bottom: 5px; /* Margem inferior reduzida para os parágrafos */
+  font-size: 18px; /* Tamanho da fonte menor para o texto */
+  color: #888; /* Cor do texto mais suave */
+  font-style: italic; /* Safra em itálico */
+}
+
+.card .safra {
+  font-style: italic; /* Safra em itálico */
+  color: #888; /* Cor mais suave para a safra */
+}
+
+.card .preco {
+  margin: 20px 0;
+  font-weight: bold; /* Preço em negrito */
+  color: #591214; /* Cor do texto mais suave */
+  font-style: normal;
+}
+
+.card .pais {
+  font-style: italic; /* Safra em itálico */
+  color: #888; /* Cor mais suave para o país */
+}
+
+.btn-comprar {
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  background-color: #591214; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  border: none; /* Remova a borda do botão */
+  border-radius: 4px; /* Cantos arredondados */
+  cursor: pointer; /* Altere o cursor ao passar o mouse sobre o botão */
+  text-transform: uppercase;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-comprar:hover {
+  background-color: #440f10; /* Cor de fundo mais escura ao passar o mouse sobre o botão */
+}
+
+/* Estilos adicionais para formulários */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Adicione este CSS ao seu arquivo de estilo (admin.css) */
+
+.card-info {
+  flex: 1; /* Faça as informações do vinho ocuparem todo o espaço disponível */
+  padding: 20px; /* Adicione algum espaço ao redor das informações */
+}
+
+.card-info p {
+  margin: 0; /* Remova as margens padrão dos parágrafos */
+}
+
+.card-image {
+  max-width: 200px; /* Defina uma largura máxima para a imagem */
+  margin-left: 20px; /* Adicione uma margem à esquerda para separar a imagem das informações */
+}
+
+.card-image img {
+  width: 100%; /* Faça a imagem ocupar todo o espaço disponível dentro do seu contêiner */
+  height: auto; /* Mantenha a proporção da imagem */
+}

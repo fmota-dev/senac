@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Cadastro de Produtos</title>
+</head>
+
+<body id="clienteForm">
+    <header class="cabecalho">
+        <nav class="menu">
+            <ul class="menu-lista">
+                <li class="menu-item">
+                    <a href="/" class="menu-link">Home</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/cliente" class="menu-link">Cliente</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/produto" class="menu-link">Produto</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/fornecedor" class="menu-link">Fornecedor</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1> Cadastro de Cliente</h1>
+    <main>
+        <section>
+            <form method="post" action="/cliente/cadastro">
+                <label for="nome">Nome completo:</label>
+                <input type="text" name="nome" id="nome">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+                <input type="submit" value="CADASTRAR">
+            </form>
+        </section>
+    </main>
+
+
+</body>
+
+</html>
