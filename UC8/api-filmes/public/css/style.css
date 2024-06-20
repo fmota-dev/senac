@@ -1,0 +1,74 @@
+/* style.css */
+
+/* Reseta alguns estilos padrão para garantir consistência entre diferentes navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+/* Estilo para o cabeçalho principal */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #2c3e50; /* Azul escuro */
+}
+
+/* Estilo para o parágrafo de boas-vindas */
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Estilo para os cabeçalhos secundários */
+h2 {
+  font-size: 2em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #34495e; /* Azul médio */
+}
+
+/* Estilo para as tabelas de filmes e gêneros */
+table.lista-filmes,
+table.lista-generos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table.lista-filmes th,
+table.lista-filmes td,
+table.lista-generos th,
+table.lista-generos td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Estilo para os cabeçalhos das tabelas */
+table.lista-filmes th,
+table.lista-generos th {
+  background-color: #eaf2f8; /* Azul claro */
+  font-weight: bold;
+  color: #2980b9; /* Azul padrão */
+}
+
+/* Estilo para linhas alternadas */
+table.lista-filmes tr:nth-child(even),
+table.lista-generos tr:nth-child(even) {
+  background-color: #f4faff; /* Azul muito claro */
+}
+
+/* Estilo para o hover das linhas */
+table.lista-filmes tr:hover,
+table.lista-generos tr:hover {
+  background-color: #d6eaf8; /* Azul suave */
+}
