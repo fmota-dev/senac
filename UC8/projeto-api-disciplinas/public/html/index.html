@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Cursos</title>
+</head>
+
+<body>
+  <h1>Cursos</h1>
+  <section class="courses-container">
+    <div class="getAllCourses">
+      <h2>Obter todos os cursos</h2>
+      <button id="btnGetAllCourses">Obter cursos</button>
+      <ul id="listCourses">
+      </ul>
+    </div>
+    <div class="getCourseById">
+      <h2>Obter curso por ID</h2>
+      <input type="text" id="cursoId" placeholder="ID do curso">
+      <button id="btnGetCourse">Obter curso</button>
+      <ul id="resultForId">
+      </ul>
+    </div>
+    <div class="createCourse">
+      <h2>Criar curso</h2>
+      <input type="text" id="courseName" placeholder="Nome do curso">
+      <input type="text" id="courseDescription" placeholder="Descrição do curso">
+      <button id="btnCreateCourse">Criar curso</button>
+    </div>
+    <div class="updateCourse">
+      <h2>Atualizar curso</h2>
+      <input type="text" id="courseId" placeholder="ID do curso">
+      <input type="text" id="courseNameUpdate" placeholder="Nome do curso">
+      <input type="text" id="courseDescriptionUpdate" placeholder="Descrição do curso">
+      <button id="btnUpdateCourse">Atualizar curso</button>
+    </div>
+    <div class="deleteCourse">
+      <h2>Deletar curso</h2>
+      <input type="text" id="courseIdDelete" placeholder="ID do curso">
+      <button id="btnDeleteCourse">Deletar curso</button>
+    </div>
+  </section>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
