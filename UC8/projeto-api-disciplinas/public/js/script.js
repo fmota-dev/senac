@@ -1,159 +1,164 @@
-const { configDotenv } = require("dotenv")
-configDotenv()
+class CourseManager {
+  constructor() {
+    this.btnGetAllCourses = document.getElementById("btnGetAllCourses");
+    this.btnGetCourse = document.getElementById("btnGetCourse");
+    this.btnCreateCourse = document.getElementById("btnCreateCourse");
+    this.btnUpdateCourse = document.getElementById("btnUpdateCourse");
+    this.btnDeleteCourse = document.getElementById("btnDeleteCourse");
+    this.endpointUrl = "http://localhost:3000";
+    this.listCourses = document.getElementById("listCourses");
+    this.resultForId = document.getElementById("resultForId");
+    this.inputFields = [
+      "courseName",
+      "courseDescription",
+      "cursoId",
+      "courseId",
+      "courseNameUpdate",
+      "courseDescriptionUpdate",
+      "courseIdDelete",
+    ];
+    this.initialize();
+  }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Botões
-  const btnGetAllCourses = document.getElementById("btnGetAllCourses")
-  const btnGetCourse = document.getElementById("btnGetCourse")
-  const btnCreateCourse = document.getElementById("btnCreateCourse")
-  const btnUpdateCourse = document.getElementById("btnUpdateCourse")
-  const btnDeleteCourse = document.getElementById("btnDeleteCourse")
+  initialize() {
+    this.btnGetAllCourses.addEventListener("click", this.getAllCourses.bind(this));
+    this.btnGetCourse.addEventListener("click", this.getCourseById.bind(this));
+    this.btnCreateCourse.addEventListener("click", this.createCourse.bind(this));
+    this.btnUpdateCourse.addEventListener("click", this.updateCourse.bind(this));
+    this.btnDeleteCourse.addEventListener("click", this.deleteCourse.bind(this));
+  }
 
-  const endpointUrl = process.env.ENDPOINT_URL || "http://localhost:3000"
-
-  // Função para renderizar todos os cursos
-  function renderAllCourses(courses) {
-    const listCourses = document.getElementById("listCourses")
+  renderAllCourses(courses) {
     if (courses.length === 0) {
-      listCourses.innerHTML = "<li>Nenhum curso cadastrado</li>"
+      this.listCourses.innerHTML = "<li>Nenhum curso cadastrado</li>";
     } else {
-      listCourses.innerHTML = courses
-        .map(
-          (course) =>
-            `<li>ID: ${course.id} <br> Nome: ${course.name} <br> Descrição: ${course.description}</li>`
-        )
-        .join("")
+      const courseItems = courses.map(
+        (course) =>
+          `<li>ID: ${course.id} <br> Nome: ${course.name} <br> Descrição: ${course.description}</li>`
+      );
+      this.listCourses.innerHTML = courseItems.join("");
     }
   }
 
-  // Função para limpar os campos de entrada
-  function clearInputFields() {
-    document.getElementById("courseName").value = ""
-    document.getElementById("courseDescription").value = ""
-    document.getElementById("cursoId").value = ""
-    document.getElementById("courseId").value = ""
-    document.getElementById("courseNameUpdate").value = ""
-    document.getElementById("courseDescriptionUpdate").value = ""
-    document.getElementById("courseIdDelete").value = ""
+  clearInputFields() {
+    this.inputFields.forEach((field) => {
+      document.getElementById(field).value = "";
+    });
   }
 
-  // Função para renderizar um curso por ID
-  function renderCourseById(course) {
-    const resultForId = document.getElementById("resultForId")
-    if (course) {
-      resultForId.innerHTML = `<li>${course.name}: ${course.description}</li>`
+  renderCourseById(course) {
+    if (course.message) {
+      this.resultForId.innerHTML = `<p>${course.message}</p>`;
     } else {
-      resultForId.innerHTML = "<li>Curso não encontrado</li>"
+      this.resultForId.innerHTML = `<p>ID: ${course.id} <br> Nome: ${course.name} <br> Descrição: ${course.description}</p>`;
     }
   }
 
-  // Função para obter todos os cursos
-  function getAllCourses() {
-    fetch(`${endpointUrl}/courses`)
+  handleError(error, action) {
+    console.error(`Erro ao ${action} curso:`, error);
+    alert(`Erro ao ${action} curso. Por favor, tente novamente.`);
+  }
+
+  getAllCourses() {
+    fetch(`${this.endpointUrl}/courses`)
       .then((response) => response.json())
       .then((data) => {
         if (data.length === 0) {
-          alert("Não há nenhum curso cadastrado")
+          alert("Não há nenhum curso cadastrado");
         } else {
-          renderAllCourses(data)
-          alert("Cursos obtidos com sucesso!")
+          this.renderAllCourses(data);
+          alert("Cursos obtidos com sucesso!");
         }
       })
+      .catch((error) => this.handleError(error, "obter"));
   }
 
-  // Função para obter curso por ID
-  function getCourseById() {
-    const courseId = document.getElementById("cursoId").value
+  getCourseById() {
+    const courseId = document.getElementById("cursoId").value;
     if (!courseId) {
-      alert("Por favor, preencha o campo ID do curso.")
-      return
+      alert("Por favor, preencha o campo ID do curso.");
+      return;
     }
-    fetch(`${endpointUrl}/courses/${courseId}`)
+    fetch(`${this.endpointUrl}/courses/${courseId}`)
       .then((response) => response.json())
       .then((data) => {
-        renderCourseById(data)
-        alert("Curso obtido com sucesso!")
+        this.renderCourseById(data);
+        if (data.message) {
+          alert("Curso não encontrado");
+        } else {
+          alert("Curso obtido com sucesso!");
+        }
       })
-      .catch((error) => console.error("Erro ao obter curso por ID:", error))
+      .catch((error) => this.handleError(error, "obter"));
   }
 
-  // Função para criar curso
-  function createCourse() {
-    const courseName = document.getElementById("courseName").value
-    const courseDescription = document.getElementById("courseDescription").value
+  createCourse() {
+    const courseName = document.getElementById("courseName").value;
+    const courseDescription = document.getElementById("courseDescription").value;
     if (!courseName || !courseDescription) {
-      alert("Por favor, preencha todos os campos.")
-      return
+      alert("Por favor, preencha todos os campos.");
+      return;
     }
-    const data = { name: courseName, description: courseDescription }
+    const data = { name: courseName, description: courseDescription };
 
-    fetch(`${endpointUrl}/courses/create`, {
+    fetch(`${this.endpointUrl}/courses/create`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Curso criado com sucesso:", data)
-        alert("Curso criado com sucesso!")
-        clearInputFields()
+        console.log("Curso criado com sucesso:", data);
+        alert("Curso criado com sucesso!");
+        this.clearInputFields();
       })
-      .catch((error) => console.error("Erro ao criar curso:", error))
+      .catch((error) => this.handleError(error, "criar"));
   }
 
-  // Função para atualizar curso
-  function updateCourse() {
-    const courseId = document.getElementById("courseId").value
-    const courseNameUpdate = document.getElementById("courseNameUpdate").value
-    const courseDescriptionUpdate = document.getElementById(
-      "courseDescriptionUpdate"
-    ).value
+  updateCourse() {
+    const courseId = document.getElementById("courseId").value;
+    const courseNameUpdate = document.getElementById("courseNameUpdate").value;
+    const courseDescriptionUpdate = document.getElementById("courseDescriptionUpdate").value;
     if (!courseId || !courseNameUpdate || !courseDescriptionUpdate) {
-      alert("Por favor, preencha todos os campos.")
-      return
+      alert("Por favor, preencha todos os campos.");
+      return;
     }
     const data = {
       name: courseNameUpdate,
       description: courseDescriptionUpdate,
-    }
+    };
 
-    fetch(`${endpointUrl}/courses/update/${courseId}`, {
+    fetch(`${this.endpointUrl}/courses/update/${courseId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Curso atualizado com sucesso:", data)
-        alert("Curso atualizado com sucesso!")
-        clearInputFields()
+        console.log("Curso atualizado com sucesso:", data);
+        alert("Curso atualizado com sucesso!");
+        this.clearInputFields();
       })
-      .catch((error) => console.error("Erro ao atualizar curso:", error))
+      .catch((error) => this.handleError(error, "atualizar"));
   }
 
-  // Função para deletar curso
-  function deleteCourse() {
-    const courseIdDelete = document.getElementById("courseIdDelete").value
+  deleteCourse() {
+    const courseIdDelete = document.getElementById("courseIdDelete").value;
     if (!courseIdDelete) {
-      alert("Por favor, preencha o campo ID do curso.")
-      return
+      alert("Por favor, preencha o campo ID do curso.");
+      return;
     }
-    fetch(`${endpointUrl}/courses/delete/${courseIdDelete}`, {
+    fetch(`${this.endpointUrl}/courses/delete/${courseIdDelete}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Curso excluído com sucesso:", data)
-        alert("Curso excluído com sucesso!")
-        clearInputFields()
+        console.log("Curso excluído com sucesso:", data);
+        alert("Curso excluído com sucesso!");
+        this.clearInputFields();
       })
-      .catch((error) => console.error("Erro ao excluir curso:", error))
+      .catch((error) => this.handleError(error, "excluir"));
   }
+}
 
-  // Adicionar Event Listeners
-  btnGetAllCourses.addEventListener("click", getAllCourses)
-  btnGetCourse.addEventListener("click", getCourseById)
-  btnCreateCourse.addEventListener("click", createCourse)
-  btnUpdateCourse.addEventListener("click", updateCourse)
-  btnDeleteCourse.addEventListener("click", deleteCourse)
-})
+const courseManager = new CourseManager();

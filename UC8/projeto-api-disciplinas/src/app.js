@@ -3,7 +3,6 @@ const app = express()
 const porta = 3000
 const path = require("path")
 const courseRoutes = require("./routes/course.routes")
-const connection = require("./database/db")
 
 app.use(express.static("public"))
 app.use(express.json())

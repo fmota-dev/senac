@@ -1,6 +1,5 @@
 const sql = require("mysql2")
-const { configDotenv } = require("dotenv")
-configDotenv()
+require("dotenv").config()
 
 const connection = sql.createConnection(
   {
