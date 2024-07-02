@@ -2,7 +2,7 @@ require("dotenv").config()
 require("./models")
 
 const express = require("express")
-const { sincronizarDB, connectarDB } = require("../config/db")
+const { connectarDB } = require("../config/db")
 const { userRoutes } = require("./routes")
 
 const app = express()
@@ -10,7 +10,6 @@ const host = process.env.APP_HOST
 const porta = process.env.APP_PORT
 
 connectarDB()
-sincronizarDB()
 
 app.use(express.json())
 app.use(userRoutes)

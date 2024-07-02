@@ -13,19 +13,11 @@ const db = new Sequelize({
 async function connectarDB() {
 	try {
 		await db.authenticate()
-		console.log("Conectado com sucesso ao banco de dados")
-	} catch (error) {
-		console.error("Não foi possivel conectar ao banco de dados", error)
-	}
-}
-
-async function sincronizarDB() {
-	try {
 		await db.sync()
-		console.log("Tabelas sincronizadas com sucesso")
+		console.log("Conectado e sincronizado com o banco de dados.")
 	} catch (error) {
-		console.error("Não foi possivel sincronizar as tabelas", error)
+		console.error("Erro ao conectar e sincronizar com o banco de dados:", error)
 	}
 }
 
-module.exports = { connectarDB, sincronizarDB, db }
+module.exports = { connectarDB, db }
