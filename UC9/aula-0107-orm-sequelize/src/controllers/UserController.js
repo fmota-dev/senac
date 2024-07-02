@@ -11,20 +11,19 @@ class UserController {
 	}
 
 	async cadastrarUsuario(req, res) {
-		const { nomeUsuario, senha, email, dataNascimento } = req.body
-		const user = await User.create({
-			nomeUsuario,
-			senha,
-			email,
-			dataNascimento,
-		})
+		const novoUsuario = req.body
+		const user = await User.create(novoUsuario)
 		return res.json({ mensagem: "Usuário cadastrado com sucesso", user })
 	}
 
 	async obterUsuarioPorId(req, res) {
 		const { id } = req.params
 		const user = await User.findByPk(id)
-		return res.json({ mensagem: "Usuário encontrado", user })
+		if (user === null) {
+			return res.json({ mensagem: "Usuário não encontrado" })
+		} else {
+			return res.json({ mensagem: "Usuário encontrado", user })
+		}
 	}
 
 	async atualizarUsuario(req, res) {
