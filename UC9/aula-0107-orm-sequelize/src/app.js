@@ -1,12 +1,14 @@
 require("dotenv").config()
 const express = require("express")
-const db = require("../config/db")
+const { sincronizarDB, connectarDB } = require("../config/db")
+const User = require("./models/User")
 
 const app = express()
 const host = process.env.APP_HOST
 const porta = process.env.APP_PORT
 
-db.connectarDB()
+connectarDB()
+sincronizarDB()
 
 app.get("/", (_req, res) => {
   res.json({ mensagem: "Aula 01/07 - ORM - Sequelize" })
