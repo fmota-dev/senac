@@ -14,10 +14,6 @@ connectarDB()
 app.use(express.json())
 app.use(userRoutes)
 
-app.get("/", (_req, res) => {
-	res.json({ mensagem: "Aula 01/07 - ORM - Sequelize" })
-})
-
 app.listen(porta, () => {
 	console.log(`Aplicação rodando em http://${host}:${porta}`)
 })
