@@ -10,22 +10,6 @@ class CategoriaController {
     }
   }
 
-  async buscarCategoriasComPrudutos(req, res) {
-    try {
-      const categorias = await Categoria.findAll({
-        include: [
-          {
-            model: Produto,
-            as: "produtos",
-          },
-        ],
-      })
-      res.json({ mensagem: "Listagem de categorias e produtos", categorias })
-    } catch (error) {
-      console.error("Erro ao buscar categorias e produtos:", error)
-    }
-  }
-
   async criarCategoria(req, res) {
     try {
       const novaCategoria = await Categoria.create(req.body)

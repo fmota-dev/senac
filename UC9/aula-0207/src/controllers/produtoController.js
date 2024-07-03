@@ -10,20 +10,6 @@ class ProdutoController {
     }
   }
 
-  async buscarProdutosPorCategoria(req, res) {
-    try {
-      const { categoriaId } = req.params
-      const produtos = await Produto.findAll({
-        where: {
-          categoriaId,
-        },
-      })
-      res.json({ mensagem: "Lista de produtos por categoria", produtos })
-    } catch (error) {
-      res.status(400).json({ message: error.message })
-    }
-  }
-
   async criarProduto(req, res) {
     try {
       const novoProduto = await Produto.create(req.body)
