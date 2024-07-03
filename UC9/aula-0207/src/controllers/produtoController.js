@@ -23,6 +23,9 @@ class ProdutoController {
     try {
       const { id } = req.params
       const produto = await Produto.findByPk(id)
+      if (!produto) {
+        return res.status(404).json({ mensagem: "Produto não encontrado" })
+      }
       res.json({ mensagem: "Produto encontrado", produto })
     } catch (error) {
       res.status(400).json({ message: error.message })
@@ -33,6 +36,9 @@ class ProdutoController {
     try {
       const { id } = req.params
       const produto = await Produto.findByPk(id)
+      if (!produto) {
+        return res.status(404).json({ mensagem: "Produto não encontrado" })
+      }
       await produto.update(req.body)
       res.json({ mensagem: "Produto atualizado", produto })
     } catch (error) {
@@ -44,6 +50,9 @@ class ProdutoController {
     try {
       const { id } = req.params
       const produto = await Produto.findByPk(id)
+      if (!produto) {
+        return res.status(404).json({ mensagem: "Produto não encontrado" })
+      }
       await produto.destroy()
       res.json({ mensagem: "Produto deletado", produto })
     } catch (error) {
