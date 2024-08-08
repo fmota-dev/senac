@@ -18,11 +18,38 @@ async function listarFilmes() {
         <td>${filme.id}</td>
         <td>${filme.nome}</td>
         <td>${generoFilme.descricao}</td>
+				<td>
+					<div>
+						<button class="btn btn-editar" onclick="editarFilme(${filme.id})">Editar</button>
+						<button class="btn btn-remover" onclick="deletarFilme(${filme.id})">Deletar</button>
+					</div>
+				</td>
       </tr>
-    `
-
+			`
 		listaFilmes.innerHTML += templateFilme
 	})
 }
 
 listarFilmes()
+
+async function editarFilme(event, id) {
+	let dialog = document.querySelector('#dialog')
+	dialog.showModal()
+}
+
+async function deletarFilme(id) {
+	const response = await fetch(`/filmes/${id}`, {
+		method: 'DELETE',
+	})
+	const data = await response.json()
+	const template = `
+		<div class="alert alert-success" role="alert">
+			${data.mensagem}
+		</div>
+	`
+	document.body.innerHTML += template
+	setTimeout(() => {
+		window.location.reload()
+	}, 2000)
+}
+

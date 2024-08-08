@@ -4,8 +4,8 @@ const app = express()
 const port = 3000
 
 
-const filmeRoutes = require("./routes/filmeRoutes")
-const generoRoutes = require("./routes/generoRoutes")
+const filmeRoutes = require("./routes/filme.routes")
+const generoRoutes = require("./routes/genero.routes")
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())

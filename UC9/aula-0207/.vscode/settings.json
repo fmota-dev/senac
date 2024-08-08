@@ -10,8 +10,8 @@
 			"port": 3306,
 			"driver": "MySQL",
 			"name": "dev",
+			"database": "mercadinho",
 			"username": "root",
-			"database": "master",
 			"askForPassword": true
 		}
 	],
