@@ -11,10 +11,6 @@ export const Container = styled.KeyboardAvoidingView`
   justify-content: center;
 `;
 
-export const Logo = styled.Image`
-  margin-bottom: 25px;
-`;
-
 export const AreaInput = styled.View`
   flex-direction: row;
 `;
@@ -44,13 +40,4 @@ export const SubmitText = styled.Text`
   font-weight: 500;
   text-transform: uppercase;
   color: #FFF;
-`;
-
-export const Link = styled.TouchableOpacity`
-  margin-top: 10px;
-  margin-bottom: 10px;
-`;
-
-export const LinkText = styled.Text`
-  color: #171717;
 `;

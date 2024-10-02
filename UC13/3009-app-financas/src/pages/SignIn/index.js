@@ -1,13 +1,46 @@
 import React from "react";
-import logoImg from "../../../assets/Logo.png";
-import { SignStyles } from "./styles.js";
+import { Platform } from "react-native";
 
-export default function SingnIn() {
+import {
+	AreaInput,
+	Background,
+	Container,
+	Input,
+	Link,
+	LinkText,
+	Logo,
+	SubmitButton,
+	SubmitText,
+} from "./styles";
+
+import imgLogo from "../../../assets/Logo.png";
+
+import { useNavigation } from "@react-navigation/native";
+
+export default function SignIn() {
+	const navigation = useNavigation();
+
 	return (
-		<SignStyles.Background>
-			<SignStyles.Container>
-				<SignStyles.Logo source={logoImg} />
-			</SignStyles.Container>
-		</SignStyles.Background>
+		<Background>
+			<Container behavior={Platform.OS === "ios" ? "padding" : ""} enabled>
+				<Logo source={imgLogo} />
+
+				<AreaInput>
+					<Input placeholder="Seu email" />
+				</AreaInput>
+
+				<AreaInput>
+					<Input placeholder="Sua senha" />
+				</AreaInput>
+
+				<SubmitButton activeOpacity={0.8}>
+					<SubmitText>Acessar</SubmitText>
+				</SubmitButton>
+
+				<Link onPress={() => navigation.navigate("SignUp")}>
+					<LinkText>Criar uma conta!</LinkText>
+				</Link>
+			</Container>
+		</Background>
 	);
 }
